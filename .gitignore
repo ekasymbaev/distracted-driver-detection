@@ -1,0 +1,10 @@
+distracted_driver_env/
+data/raw/
+data/processed/
+*.pt
+*.pth
+*.ckpt
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.env
