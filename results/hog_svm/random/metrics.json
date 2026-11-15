@@ -1,0 +1,7 @@
+{
+    "model": "HOG + LinearSVC",
+    "split": "random",
+    "accuracy": 0.9866230677764566,
+    "macro_f1": 0.9865514917107612,
+    "training_time_seconds": 1294.9100515420141
+}
