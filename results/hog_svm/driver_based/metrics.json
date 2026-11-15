@@ -1,0 +1,7 @@
+{
+    "accuracy": 0.4252012212045518,
+    "macro_f1": 0.4179830867494493,
+    "training_time_seconds": 1477,
+    "split": "driver_based",
+    "model": "HOG + LinearSVC"
+}
