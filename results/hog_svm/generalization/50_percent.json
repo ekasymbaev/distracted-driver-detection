@@ -1,0 +1,7 @@
+{
+    "training_percentage": 50,
+    "training_images": 7866,
+    "accuracy": 0.42131557035803496,
+    "macro_f1": 0.4063843652600177,
+    "training_seconds": 957.1043191250064
+}
