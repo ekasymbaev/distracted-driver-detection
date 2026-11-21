@@ -1,932 +1,2501 @@
 {
-  "schema_version": "1.0",
-  "title": "Distracted Driver Detection — Classical ML with HOG: consolidated driver-independent cross-validation report",
-  "generated_at_utc": "2026-11-21T16:31:21.403638+00:00",
-  "coverage": {
-    "resolutions": [
-      "64x48",
-      "128x96"
+    "report_title": "Classical ML \u2014 Driver-Based HOG Experiments",
+    "generated_at": "2026-11-21T18:58:26.183348+00:00",
+    "dataset": {
+        "training_images": 15732,
+        "training_drivers": 18,
+        "classes": 10,
+        "feature_type": "HOG"
+    },
+    "evaluation": {
+        "method": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "grouping": "subject",
+        "metrics": [
+            "accuracy",
+            "macro_f1"
+        ],
+        "test_set_used": false
+    },
+    "experiments": {
+        "Logistic Regression": {
+            "64x48": {
+                "resolution": "64x48",
+                "hog_features": 1260,
+                "summary": {
+                    "mean_accuracy": 0.48960902945067747,
+                    "std_accuracy": 0.07464877357801145,
+                    "mean_macro_f1": 0.49704148466881487,
+                    "std_macro_f1": 0.06584609014164763,
+                    "total_runtime_seconds": null
+                },
+                "fold_results": [
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "64x48",
+                        "fold": 1,
+                        "accuracy": 0.406603773584906,
+                        "macro_f1": 0.426652704071901
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "64x48",
+                        "fold": 2,
+                        "accuracy": 0.436372501218918,
+                        "macro_f1": 0.443889984659357
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "64x48",
+                        "fold": 3,
+                        "accuracy": 0.598256735340729,
+                        "macro_f1": 0.589892708402615
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "64x48",
+                        "fold": 4,
+                        "accuracy": 0.517203107658158,
+                        "macro_f1": 0.527730541541386
+                    }
+                ],
+                "metadata": null,
+                "source_csv": "../results/classical/driver_based/logistic_regression_64x48.csv",
+                "source_metadata": null
+            },
+            "128x96": {
+                "resolution": "128x96",
+                "hog_features": 5940,
+                "summary": {
+                    "mean_accuracy": 0.6104688056620746,
+                    "std_accuracy": 0.13225573908550795,
+                    "mean_macro_f1": 0.6108790413007463,
+                    "std_macro_f1": 0.12362120778840612,
+                    "total_runtime_seconds": null
+                },
+                "fold_results": [
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "128x96",
+                        "fold": 1,
+                        "accuracy": 0.410141509433962,
+                        "macro_f1": 0.425520296795165,
+                        "fit_time": 3.298760890960693
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "128x96",
+                        "fold": 2,
+                        "accuracy": 0.580692345197465,
+                        "macro_f1": 0.57923797071835,
+                        "fit_time": 3.929901123046875
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "128x96",
+                        "fold": 3,
+                        "accuracy": 0.760697305863708,
+                        "macro_f1": 0.752735587418363,
+                        "fit_time": 3.775545835494995
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "128x96",
+                        "fold": 4,
+                        "accuracy": 0.690344062153163,
+                        "macro_f1": 0.686022310271108,
+                        "fit_time": 3.634526014328003
+                    }
+                ],
+                "metadata": null,
+                "source_csv": "../results/classical/driver_based/logistic_regression_128x96.csv",
+                "source_metadata": null
+            },
+            "256x192": {
+                "resolution": "256x192",
+                "hog_features": 25668,
+                "summary": {
+                    "mean_accuracy": 0.5890712612550054,
+                    "std_accuracy": 0.11976533185925725,
+                    "mean_macro_f1": 0.5866608084563104,
+                    "std_macro_f1": 0.11309521211915016,
+                    "total_runtime_seconds": 19.727031735004857
+                },
+                "fold_results": [
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "256x192",
+                        "fold": 1,
+                        "accuracy": 0.430188679245283,
+                        "macro_f1": 0.441689441314596,
+                        "fit_time": 4.668184280395508,
+                        "score_time": 0.15306830406189
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "256x192",
+                        "fold": 2,
+                        "accuracy": 0.533398342272062,
+                        "macro_f1": 0.530752945378394,
+                        "fit_time": 4.839539766311646,
+                        "score_time": 0.147732734680176
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "256x192",
+                        "fold": 3,
+                        "accuracy": 0.751188589540412,
+                        "macro_f1": 0.745596102916868,
+                        "fit_time": 4.645575046539307,
+                        "score_time": 0.134673118591309
+                    },
+                    {
+                        "model": "Logistic Regression",
+                        "resolution": "256x192",
+                        "fold": 4,
+                        "accuracy": 0.641509433962264,
+                        "macro_f1": 0.628604744215385,
+                        "fit_time": 4.966542482376099,
+                        "score_time": 0.143634796142578
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "Logistic Regression",
+                        "resolution": "256x192",
+                        "feature_type": "HOG",
+                        "started_at": "2026-11-21T16:36:40.554845+00:00",
+                        "completed_at": "2026-11-21T16:37:00.281917+00:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_256x192_train.npy",
+                        "metadata_file": "data/splits/driver_based/train.csv",
+                        "training_images": 15732,
+                        "hog_features": 25668,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "pipeline": [
+                            "StandardScaler",
+                            "LogisticRegression"
+                        ],
+                        "scaler_parameters": {
+                            "copy": true,
+                            "with_mean": true,
+                            "with_std": true
+                        },
+                        "logistic_regression_parameters": {
+                            "C": 1.0,
+                            "class_weight": null,
+                            "dual": false,
+                            "fit_intercept": true,
+                            "intercept_scaling": 1,
+                            "l1_ratio": 0.0,
+                            "max_iter": 1000,
+                            "n_jobs": null,
+                            "penalty": "deprecated",
+                            "random_state": null,
+                            "solver": "lbfgs",
+                            "tol": 0.0001,
+                            "verbose": 0,
+                            "warm_start": false
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.43018867924528303,
+                                "macro_f1": 0.44168944131459564,
+                                "fit_time_seconds": 4.668184280395508,
+                                "score_time_seconds": 0.15306830406188965
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5333983422720624,
+                                "macro_f1": 0.5307529453783937,
+                                "fit_time_seconds": 4.8395397663116455,
+                                "score_time_seconds": 0.14773273468017578
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.751188589540412,
+                                "macro_f1": 0.7455961029168675,
+                                "fit_time_seconds": 4.645575046539307,
+                                "score_time_seconds": 0.1346731185913086
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.6415094339622641,
+                                "macro_f1": 0.6286047442153847,
+                                "fit_time_seconds": 4.966542482376099,
+                                "score_time_seconds": 0.14363479614257812
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.5890712612550054,
+                        "std_accuracy": 0.11976533185925725,
+                        "mean_macro_f1": 0.5866608084563104,
+                        "std_macro_f1": 0.11309521211915016
+                    },
+                    "timing": {
+                        "total_execution_seconds": 19.727031735004857,
+                        "total_fit_time_seconds": 19.11984157562256,
+                        "total_score_time_seconds": 0.5791089534759521
+                    },
+                    "warnings": [],
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu_count": 32
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/logistic_regression_256x192.csv",
+                "source_metadata": "../results/classical/driver_based/logistic_regression_256x192_metadata.json"
+            }
+        },
+        "Linear SVM": {
+            "64x48": {
+                "resolution": "64x48",
+                "hog_features": 1260,
+                "summary": {
+                    "mean_accuracy": 0.43445594579255276,
+                    "std_accuracy": 0.05284567064136211,
+                    "mean_macro_f1": 0.42973416679779275,
+                    "std_macro_f1": 0.04437474175373666,
+                    "total_runtime_seconds": 40.3348228429968
+                },
+                "fold_results": [
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "64x48",
+                        "fold": 1,
+                        "accuracy": 0.392688679245283,
+                        "macro_f1": 0.398016670360449,
+                        "fit_time": 37.00846743583679,
+                        "score_time": 0.026051044464111,
+                        "iterations": 11,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "64x48",
+                        "fold": 2,
+                        "accuracy": 0.380789858605558,
+                        "macro_f1": 0.378609930702403,
+                        "fit_time": 36.42823791503906,
+                        "score_time": 0.0263512134552,
+                        "iterations": 11,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "64x48",
+                        "fold": 3,
+                        "accuracy": 0.513734812466984,
+                        "macro_f1": 0.491470143225574,
+                        "fit_time": 39.588218212127686,
+                        "score_time": 0.017711400985718,
+                        "iterations": 12,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "64x48",
+                        "fold": 4,
+                        "accuracy": 0.450610432852386,
+                        "macro_f1": 0.450839922902745,
+                        "fit_time": 39.79724740982056,
+                        "score_time": 0.015377283096313,
+                        "iterations": 11,
+                        "iteration_limit_reached": false
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "Linear SVM",
+                        "resolution": "64x48",
+                        "feature_type": "HOG",
+                        "experiment_variant": "primal",
+                        "started_at": "2026-11-21T18:40:01.950352+00:00",
+                        "completed_at": "2026-11-21T18:40:42.285218+00:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
+                        "metadata_file": "data/splits/driver_based/train.csv",
+                        "training_images": 15732,
+                        "hog_features": 1260,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "pipeline": [
+                            "StandardScaler",
+                            "LinearSVC"
+                        ],
+                        "scaler_parameters": {
+                            "copy": true,
+                            "with_mean": true,
+                            "with_std": true
+                        },
+                        "svm_parameters": {
+                            "C": 1.0,
+                            "class_weight": null,
+                            "dual": false,
+                            "fit_intercept": true,
+                            "intercept_scaling": 1,
+                            "loss": "squared_hinge",
+                            "max_iter": 1000,
+                            "multi_class": "ovr",
+                            "penalty": "l2",
+                            "random_state": 42,
+                            "tol": 0.01,
+                            "verbose": 0
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "parallel_workers": 4,
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.392688679245283,
+                                "macro_f1": 0.39801667036044946,
+                                "fit_time_seconds": 37.00846743583679,
+                                "score_time_seconds": 0.026051044464111328,
+                                "iterations": 11,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.38078985860555825,
+                                "macro_f1": 0.37860993070240295,
+                                "fit_time_seconds": 36.42823791503906,
+                                "score_time_seconds": 0.026351213455200195,
+                                "iterations": 11,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5137348124669836,
+                                "macro_f1": 0.49147014322557353,
+                                "fit_time_seconds": 39.588218212127686,
+                                "score_time_seconds": 0.017711400985717773,
+                                "iterations": 12,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.4506104328523862,
+                                "macro_f1": 0.4508399229027451,
+                                "fit_time_seconds": 39.79724740982056,
+                                "score_time_seconds": 0.015377283096313477,
+                                "iterations": 11,
+                                "iteration_limit_reached": false
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.43445594579255276,
+                        "std_accuracy": 0.05284567064136211,
+                        "mean_macro_f1": 0.42973416679779275,
+                        "std_macro_f1": 0.04437474175373666
+                    },
+                    "timing": {
+                        "total_execution_seconds": 40.3348228429968,
+                        "total_fit_time_seconds": 152.8221709728241,
+                        "total_score_time_seconds": 0.08549094200134277
+                    },
+                    "convergence": {
+                        "iterations_per_fold": [
+                            11,
+                            11,
+                            12,
+                            11
+                        ],
+                        "iteration_limit_reached": [
+                            false,
+                            false,
+                            false,
+                            false
+                        ],
+                        "convergence_verified": false,
+                        "note": "Review worker output for convergence warnings."
+                    },
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu_count": 32
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/linear_svm_64x48_primal.csv",
+                "source_metadata": "../results/classical/driver_based/linear_svm_64x48_primal_metadata.json"
+            },
+            "128x96": {
+                "resolution": "128x96",
+                "hog_features": 5940,
+                "summary": {
+                    "mean_accuracy": 0.5011891322168187,
+                    "std_accuracy": 0.09359660973118578,
+                    "mean_macro_f1": 0.49338829027532893,
+                    "std_macro_f1": 0.08809010037388144,
+                    "total_runtime_seconds": 157.43785742801265
+                },
+                "fold_results": [
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "128x96",
+                        "fold": 1,
+                        "accuracy": 0.377358490566038,
+                        "macro_f1": 0.376904707336338,
+                        "fit_time": 141.62943625450134,
+                        "score_time": 0.119692325592041,
+                        "iterations": 6,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "128x96",
+                        "fold": 2,
+                        "accuracy": 0.451487079473428,
+                        "macro_f1": 0.448845586887847,
+                        "fit_time": 147.28865551948547,
+                        "score_time": 0.084089040756226,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "128x96",
+                        "fold": 3,
+                        "accuracy": 0.620972002113048,
+                        "macro_f1": 0.609413777574827,
+                        "fit_time": 156.8723316192627,
+                        "score_time": 0.062728643417358,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "128x96",
+                        "fold": 4,
+                        "accuracy": 0.554938956714761,
+                        "macro_f1": 0.538389089302304,
+                        "fit_time": 157.38304114341736,
+                        "score_time": 0.044227838516235,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "Linear SVM",
+                        "resolution": "128x96",
+                        "feature_type": "HOG",
+                        "experiment_variant": "primal",
+                        "started_at": "2026-11-21T18:44:37.116356+00:00",
+                        "completed_at": "2026-11-21T18:47:14.554256+00:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+                        "metadata_file": "data/splits/driver_based/train.csv",
+                        "training_images": 15732,
+                        "hog_features": 5940,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "pipeline": [
+                            "StandardScaler",
+                            "LinearSVC"
+                        ],
+                        "scaler_parameters": {
+                            "copy": true,
+                            "with_mean": true,
+                            "with_std": true
+                        },
+                        "svm_parameters": {
+                            "C": 1.0,
+                            "class_weight": null,
+                            "dual": false,
+                            "fit_intercept": true,
+                            "intercept_scaling": 1,
+                            "loss": "squared_hinge",
+                            "max_iter": 1000,
+                            "multi_class": "ovr",
+                            "penalty": "l2",
+                            "random_state": 42,
+                            "tol": 0.01,
+                            "verbose": 0
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "parallel_workers": 4,
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.37735849056603776,
+                                "macro_f1": 0.37690470733633796,
+                                "fit_time_seconds": 141.62943625450134,
+                                "score_time_seconds": 0.11969232559204102,
+                                "iterations": 6,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.4514870794734276,
+                                "macro_f1": 0.4488455868878474,
+                                "fit_time_seconds": 147.28865551948547,
+                                "score_time_seconds": 0.08408904075622559,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.620972002113048,
+                                "macro_f1": 0.6094137775748267,
+                                "fit_time_seconds": 156.8723316192627,
+                                "score_time_seconds": 0.0627286434173584,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5549389567147613,
+                                "macro_f1": 0.5383890893023036,
+                                "fit_time_seconds": 157.38304114341736,
+                                "score_time_seconds": 0.04422783851623535,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.5011891322168187,
+                        "std_accuracy": 0.09359660973118578,
+                        "mean_macro_f1": 0.49338829027532893,
+                        "std_macro_f1": 0.08809010037388144
+                    },
+                    "timing": {
+                        "total_execution_seconds": 157.43785742801265,
+                        "total_fit_time_seconds": 603.1734645366669,
+                        "total_score_time_seconds": 0.31073784828186035
+                    },
+                    "convergence": {
+                        "iterations_per_fold": [
+                            6,
+                            5,
+                            5,
+                            5
+                        ],
+                        "iteration_limit_reached": [
+                            false,
+                            false,
+                            false,
+                            false
+                        ],
+                        "convergence_verified": false,
+                        "note": "Review worker output for convergence warnings."
+                    },
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu_count": 32
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/linear_svm_128x96_primal.csv",
+                "source_metadata": "../results/classical/driver_based/linear_svm_128x96_primal_metadata.json"
+            },
+            "256x192": {
+                "resolution": "256x192",
+                "hog_features": 25668,
+                "summary": {
+                    "mean_accuracy": 0.5519726832595199,
+                    "std_accuracy": 0.08691714173492575,
+                    "mean_macro_f1": 0.5434516949534163,
+                    "std_macro_f1": 0.07943517276029283,
+                    "total_runtime_seconds": 567.0184994390002
+                },
+                "fold_results": [
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "256x192",
+                        "fold": 1,
+                        "accuracy": 0.419811320754717,
+                        "macro_f1": 0.42161360150539,
+                        "fit_time": 531.0781207084656,
+                        "score_time": 0.427905321121216,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "256x192",
+                        "fold": 2,
+                        "accuracy": 0.538761579717211,
+                        "macro_f1": 0.533822550949844,
+                        "fit_time": 550.903223991394,
+                        "score_time": 0.331573009490967,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "256x192",
+                        "fold": 3,
+                        "accuracy": 0.656365557316429,
+                        "macro_f1": 0.638001350837033,
+                        "fit_time": 557.2360436916351,
+                        "score_time": 0.227224111557007,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    },
+                    {
+                        "model": "Linear SVM",
+                        "resolution": "256x192",
+                        "fold": 4,
+                        "accuracy": 0.592952275249722,
+                        "macro_f1": 0.580369276521398,
+                        "fit_time": 566.2753307819366,
+                        "score_time": 0.178352832794189,
+                        "iterations": 5,
+                        "iteration_limit_reached": false
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "Linear SVM",
+                        "resolution": "256x192",
+                        "feature_type": "HOG",
+                        "started_at": "2026-11-21T18:24:32.646722+00:00",
+                        "completed_at": "2026-11-21T18:33:59.665271+00:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_256x192_train.npy",
+                        "training_images": 15732,
+                        "hog_features": 25668,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "pipeline": [
+                            "StandardScaler",
+                            "LinearSVC"
+                        ],
+                        "scaler_parameters": {
+                            "copy": true,
+                            "with_mean": true,
+                            "with_std": true
+                        },
+                        "svm_parameters": {
+                            "C": 1.0,
+                            "class_weight": null,
+                            "dual": false,
+                            "fit_intercept": true,
+                            "intercept_scaling": 1,
+                            "loss": "squared_hinge",
+                            "max_iter": 1000,
+                            "multi_class": "ovr",
+                            "penalty": "l2",
+                            "random_state": 42,
+                            "tol": 0.01,
+                            "verbose": 0
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "parallel_workers": 4,
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.419811320754717,
+                                "macro_f1": 0.4216136015053905,
+                                "fit_time_seconds": 531.0781207084656,
+                                "score_time_seconds": 0.4279053211212158,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5387615797172112,
+                                "macro_f1": 0.533822550949844,
+                                "fit_time_seconds": 550.903223991394,
+                                "score_time_seconds": 0.3315730094909668,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.656365557316429,
+                                "macro_f1": 0.6380013508370329,
+                                "fit_time_seconds": 557.2360436916351,
+                                "score_time_seconds": 0.22722411155700684,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5929522752497225,
+                                "macro_f1": 0.5803692765213976,
+                                "fit_time_seconds": 566.2753307819366,
+                                "score_time_seconds": 0.17835283279418945,
+                                "iterations": 5,
+                                "iteration_limit_reached": false
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.5519726832595199,
+                        "std_accuracy": 0.08691714173492575,
+                        "mean_macro_f1": 0.5434516949534163,
+                        "std_macro_f1": 0.07943517276029283
+                    },
+                    "timing": {
+                        "total_execution_seconds": 567.0184994390002,
+                        "total_fit_time_seconds": 2205.4927191734314,
+                        "total_score_time_seconds": 1.165055274963379
+                    },
+                    "convergence": {
+                        "iterations_per_fold": [
+                            5,
+                            5,
+                            5,
+                            5
+                        ],
+                        "iteration_limit_reached": [
+                            false,
+                            false,
+                            false,
+                            false
+                        ],
+                        "convergence_verified": false,
+                        "note": "Review convergence warnings in notebook output."
+                    },
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu_count": 32
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/linear_svm_256x192.csv",
+                "source_metadata": "../results/classical/driver_based/linear_svm_256x192_metadata.json"
+            }
+        },
+        "Random Forest": {
+            "64x48": {
+                "resolution": "64x48",
+                "hog_features": 1260,
+                "summary": {
+                    "mean_accuracy": 0.5294034591126219,
+                    "std_accuracy": 0.08650414360934693,
+                    "mean_macro_f1": 0.5134710303029337,
+                    "std_macro_f1": 0.08075380138808567,
+                    "total_runtime_seconds": 17.1
+                },
+                "fold_results": [
+                    {
+                        "model": "Random Forest",
+                        "resolution": "64x48",
+                        "fold": 1,
+                        "accuracy": 0.404716981132076,
+                        "macro_f1": 0.400737202868994,
+                        "fit_time": 4.137458801269531,
+                        "score_time": 0.060982942581177
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "64x48",
+                        "fold": 2,
+                        "accuracy": 0.495368113115553,
+                        "macro_f1": 0.474444685669623,
+                        "fit_time": 4.150639295578003,
+                        "score_time": 0.060374736785889
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "64x48",
+                        "fold": 3,
+                        "accuracy": 0.626518753301638,
+                        "macro_f1": 0.602334941239519,
+                        "fit_time": 4.298878192901611,
+                        "score_time": 0.060302734375
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "64x48",
+                        "fold": 4,
+                        "accuracy": 0.591009988901221,
+                        "macro_f1": 0.576367291433599,
+                        "fit_time": 4.340336322784424,
+                        "score_time": 0.059905290603638
+                    }
+                ],
+                "metadata": {
+                    "model": "Random Forest",
+                    "resolution": "64x48",
+                    "hog_features": 1260,
+                    "n_estimators": 500,
+                    "hyperparameters": {
+                        "bootstrap": true,
+                        "ccp_alpha": 0.0,
+                        "class_weight": null,
+                        "criterion": "gini",
+                        "max_depth": null,
+                        "max_features": "sqrt",
+                        "max_leaf_nodes": null,
+                        "max_samples": null,
+                        "min_impurity_decrease": 0.0,
+                        "min_samples_leaf": 1,
+                        "min_samples_split": 2,
+                        "min_weight_fraction_leaf": 0.0,
+                        "monotonic_cst": null,
+                        "n_estimators": 500,
+                        "n_jobs": -1,
+                        "oob_score": false,
+                        "random_state": 42,
+                        "verbose": 0,
+                        "warm_start": false
+                    },
+                    "cv_method": "StratifiedGroupKFold",
+                    "n_splits": 4,
+                    "random_state_cv": 42,
+                    "mean_accuracy": 0.5294034591126219,
+                    "std_accuracy": 0.08650414360934693,
+                    "mean_macro_f1": 0.5134710303029337,
+                    "std_macro_f1": 0.08075380138808567,
+                    "notebook_elapsed_seconds_approx": 17.1
+                },
+                "source_csv": "../results/classical/driver_based/random_forest_64x48.csv",
+                "source_metadata": "../results/classical/driver_based/random_forest_64x48_metadata.json"
+            },
+            "128x96": {
+                "resolution": "128x96",
+                "hog_features": 5940,
+                "summary": {
+                    "mean_accuracy": 0.5554416575000001,
+                    "std_accuracy": 0.12309884457119946,
+                    "mean_macro_f1": 0.53912103,
+                    "std_macro_f1": 0.1146509653365991,
+                    "total_runtime_seconds": 37.7
+                },
+                "fold_results": [
+                    {
+                        "model": "Random Forest",
+                        "resolution": "128x96",
+                        "fold": 1,
+                        "accuracy": 0.34245283,
+                        "macro_f1": 0.34124818,
+                        "fit_time": null,
+                        "score_time": null,
+                        "verbose_elapsed_minutes_approx": null
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "128x96",
+                        "fold": 2,
+                        "accuracy": 0.61774744,
+                        "macro_f1": 0.59207357,
+                        "fit_time": null,
+                        "score_time": null,
+                        "verbose_elapsed_minutes_approx": null
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "128x96",
+                        "fold": 3,
+                        "accuracy": 0.62810354,
+                        "macro_f1": 0.60380973,
+                        "fit_time": null,
+                        "score_time": null,
+                        "verbose_elapsed_minutes_approx": null
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "128x96",
+                        "fold": 4,
+                        "accuracy": 0.63346282,
+                        "macro_f1": 0.61935264,
+                        "fit_time": null,
+                        "score_time": null,
+                        "verbose_elapsed_minutes_approx": null
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "Random Forest",
+                        "resolution": "128x96",
+                        "feature_type": "HOG",
+                        "status": "recovered_from_previous_results"
+                    },
+                    "dataset": {
+                        "training_images": 15732,
+                        "hog_features": 5940
+                    },
+                    "model_configuration": {
+                        "estimator": "RandomForestClassifier",
+                        "explicit_kwargs": {
+                            "n_estimators": 500,
+                            "max_depth": null,
+                            "random_state": 42,
+                            "n_jobs": -1
+                        },
+                        "other_parameters": "scikit-learn defaults"
+                    },
+                    "cross_validation": {
+                        "strategy": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "groups": "subject",
+                        "cv_parallel_jobs": 1
+                    },
+                    "results": {
+                        "mean_accuracy": 0.5554416575000001,
+                        "std_accuracy": 0.12309884457119946,
+                        "mean_macro_f1": 0.53912103,
+                        "std_macro_f1": 0.1146509653365991
+                    },
+                    "timing": {
+                        "total_execution_seconds": 37.7,
+                        "precision": "approximate",
+                        "per_fold_times": "unavailable"
+                    },
+                    "provenance": [
+                        "Nov 21 2026 screenshot: 128x96 500-tree RF run, 37.7 s notebook execution time"
+                    ]
+                },
+                "source_csv": "../results/classical/driver_based/random_forest_128x96.csv",
+                "source_metadata": "../results/classical/driver_based/random_forest_128x96_metadata.json"
+            },
+            "256x192": {
+                "resolution": "256x192",
+                "hog_features": 25668,
+                "summary": {
+                    "mean_accuracy": 0.5325891941968248,
+                    "std_accuracy": 0.11211442468939702,
+                    "mean_macro_f1": 0.5145870771857093,
+                    "std_macro_f1": 0.10428427357166854,
+                    "total_runtime_seconds": 81.88294188899454
+                },
+                "fold_results": [
+                    {
+                        "model": "Random Forest",
+                        "resolution": "256x192",
+                        "fold": 1,
+                        "accuracy": 0.344575471698113,
+                        "macro_f1": 0.341708865134086,
+                        "fit_time": 20.04001498222351,
+                        "score_time": 0.104469060897827
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "256x192",
+                        "fold": 2,
+                        "accuracy": 0.55680156021453,
+                        "macro_f1": 0.527583155687291,
+                        "fit_time": 19.48904800415039,
+                        "score_time": 0.114732503890991
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "256x192",
+                        "fold": 3,
+                        "accuracy": 0.636027469624934,
+                        "macro_f1": 0.612747862463503,
+                        "fit_time": 20.866510152816772,
+                        "score_time": 0.102994918823242
+                    },
+                    {
+                        "model": "Random Forest",
+                        "resolution": "256x192",
+                        "fold": 4,
+                        "accuracy": 0.592952275249722,
+                        "macro_f1": 0.576308425457958,
+                        "fit_time": 21.033588886260986,
+                        "score_time": 0.103370666503906
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "Random Forest",
+                        "resolution": "256x192",
+                        "feature_type": "HOG",
+                        "started_at": "2026-11-21T16:45:48.866298+00:00",
+                        "completed_at": "2026-11-21T16:47:10.749275+00:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_256x192_train.npy",
+                        "metadata_file": "data/splits/driver_based/train.csv",
+                        "training_images": 15732,
+                        "hog_features": 25668,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "hyperparameters": {
+                            "bootstrap": true,
+                            "ccp_alpha": 0.0,
+                            "class_weight": null,
+                            "criterion": "gini",
+                            "max_depth": null,
+                            "max_features": "sqrt",
+                            "max_leaf_nodes": null,
+                            "max_samples": null,
+                            "min_impurity_decrease": 0.0,
+                            "min_samples_leaf": 1,
+                            "min_samples_split": 2,
+                            "min_weight_fraction_leaf": 0.0,
+                            "monotonic_cst": null,
+                            "n_estimators": 500,
+                            "n_jobs": -1,
+                            "oob_score": false,
+                            "random_state": 42,
+                            "verbose": 0,
+                            "warm_start": false
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "parallel_workers": 1,
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "accuracy": 0.3445754716981132,
+                                "macro_f1": 0.3417088651340863,
+                                "fit_time_seconds": 20.04001498222351,
+                                "score_time_seconds": 0.10446906089782715
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "accuracy": 0.5568015602145295,
+                                "macro_f1": 0.5275831556872908,
+                                "fit_time_seconds": 19.48904800415039,
+                                "score_time_seconds": 0.11473250389099121
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "accuracy": 0.636027469624934,
+                                "macro_f1": 0.6127478624635028,
+                                "fit_time_seconds": 20.866510152816772,
+                                "score_time_seconds": 0.10299491882324219
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "accuracy": 0.5929522752497225,
+                                "macro_f1": 0.5763084254579576,
+                                "fit_time_seconds": 21.033588886260986,
+                                "score_time_seconds": 0.10337066650390625
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.5325891941968248,
+                        "std_accuracy": 0.11211442468939702,
+                        "mean_macro_f1": 0.5145870771857093,
+                        "std_macro_f1": 0.10428427357166854
+                    },
+                    "timing": {
+                        "total_execution_seconds": 81.88294188899454,
+                        "total_fit_time_seconds": 81.42916202545166,
+                        "total_score_time_seconds": 0.4255671501159668
+                    },
+                    "warnings": [],
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu_count": 32
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/random_forest_256x192.csv",
+                "source_metadata": "../results/classical/driver_based/random_forest_256x192_metadata.json"
+            }
+        },
+        "KNN": {
+            "64x48": {
+                "resolution": "64x48",
+                "hog_features": 1260,
+                "summary": {
+                    "mean_accuracy": 0.44593492756295006,
+                    "std_accuracy": 0.07652041666311801,
+                    "mean_macro_f1": 0.43598999894999646,
+                    "std_macro_f1": 0.07824965891971487,
+                    "total_runtime_seconds": null
+                },
+                "fold_results": [
+                    {
+                        "model": "KNN",
+                        "resolution": "64x48",
+                        "fold": 1,
+                        "accuracy": 0.347169811320755,
+                        "macro_f1": 0.335964054878662,
+                        "fit_time": 0.070481538772583,
+                        "score_time": 0.285926342010498
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "64x48",
+                        "fold": 2,
+                        "accuracy": 0.399804973183813,
+                        "macro_f1": 0.387076723308429,
+                        "fit_time": 0.065658092498779,
+                        "score_time": 0.23460054397583
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "64x48",
+                        "fold": 3,
+                        "accuracy": 0.541204437400951,
+                        "macro_f1": 0.532852608588892,
+                        "fit_time": 0.066579818725586,
+                        "score_time": 0.213541984558105
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "64x48",
+                        "fold": 4,
+                        "accuracy": 0.495560488346282,
+                        "macro_f1": 0.488066609024003,
+                        "fit_time": 0.065749406814575,
+                        "score_time": 0.219080686569214
+                    }
+                ],
+                "metadata": null,
+                "source_csv": "../results/classical/driver_based/knn_64x48.csv",
+                "source_metadata": null
+            },
+            "128x96": {
+                "resolution": "128x96",
+                "hog_features": 5940,
+                "summary": {
+                    "mean_accuracy": 0.533871878740457,
+                    "std_accuracy": 0.04528640208929405,
+                    "mean_macro_f1": 0.5170431447990683,
+                    "std_macro_f1": 0.05049364754673473,
+                    "total_runtime_seconds": 6.308383880008478
+                },
+                "fold_results": [
+                    {
+                        "model": "KNN",
+                        "resolution": "128x96",
+                        "fold": 1,
+                        "accuracy": 0.474056603773585,
+                        "macro_f1": 0.453668367519413,
+                        "fit_time": 0.291847944259644,
+                        "score_time": 1.393510818481445
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "128x96",
+                        "fold": 2,
+                        "accuracy": 0.506338371526085,
+                        "macro_f1": 0.481345057129585,
+                        "fit_time": 0.28441309928894,
+                        "score_time": 1.32603931427002
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "128x96",
+                        "fold": 3,
+                        "accuracy": 0.582673005810882,
+                        "macro_f1": 0.56660810074153,
+                        "fit_time": 0.288629770278931,
+                        "score_time": 1.195044040679932
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "128x96",
+                        "fold": 4,
+                        "accuracy": 0.572419533851276,
+                        "macro_f1": 0.566551053805745,
+                        "fit_time": 0.288223028182983,
+                        "score_time": 1.217744827270508
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "KNN",
+                        "resolution": "128x96",
+                        "feature_type": "HOG",
+                        "started_at": "2026-11-21T11:24:58.442911-05:00",
+                        "completed_at": "2026-11-21T11:25:04.751342-05:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+                        "metadata_file": "data/splits/driver_based/train.csv",
+                        "training_images": 15732,
+                        "hog_features": 5940,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "pipeline": [
+                            "StandardScaler",
+                            "KNeighborsClassifier"
+                        ],
+                        "scaler_parameters": {
+                            "copy": true,
+                            "with_mean": true,
+                            "with_std": true
+                        },
+                        "knn_parameters": {
+                            "algorithm": "auto",
+                            "leaf_size": 30,
+                            "metric": "minkowski",
+                            "metric_params": null,
+                            "n_jobs": -1,
+                            "n_neighbors": 5,
+                            "p": 2,
+                            "weights": "uniform"
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.4740566037735849,
+                                "macro_f1": 0.4536683675194134,
+                                "fit_time_seconds": 0.29184794425964355,
+                                "score_time_seconds": 1.3935108184814453
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5063383715260849,
+                                "macro_f1": 0.4813450571295852,
+                                "fit_time_seconds": 0.28441309928894043,
+                                "score_time_seconds": 1.3260393142700195
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5826730058108822,
+                                "macro_f1": 0.5666081007415296,
+                                "fit_time_seconds": 0.28862977027893066,
+                                "score_time_seconds": 1.1950440406799316
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5724195338512763,
+                                "macro_f1": 0.5665510538057451,
+                                "fit_time_seconds": 0.2882230281829834,
+                                "score_time_seconds": 1.2177448272705078
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.533871878740457,
+                        "std_accuracy": 0.04528640208929405,
+                        "mean_macro_f1": 0.5170431447990683,
+                        "std_macro_f1": 0.05049364754673473
+                    },
+                    "timing": {
+                        "total_execution_seconds": 6.308383880008478,
+                        "total_fit_time_seconds": 1.153113842010498,
+                        "total_score_time_seconds": 5.132339000701904
+                    },
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu": ""
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/knn_128x96.csv",
+                "source_metadata": "../results/classical/driver_based/knn_128x96_metadata.json"
+            },
+            "256x192": {
+                "resolution": "256x192",
+                "hog_features": 25668,
+                "summary": {
+                    "mean_accuracy": 0.5306775033416725,
+                    "std_accuracy": 0.05467400242689872,
+                    "mean_macro_f1": 0.5100163969438468,
+                    "std_macro_f1": 0.05545657178925078,
+                    "total_runtime_seconds": 25.60540597801446
+                },
+                "fold_results": [
+                    {
+                        "model": "KNN",
+                        "resolution": "256x192",
+                        "fold": 1,
+                        "accuracy": 0.459669811320755,
+                        "macro_f1": 0.433599340149627,
+                        "fit_time": 1.194902896881104,
+                        "score_time": 5.632385730743408
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "256x192",
+                        "fold": 2,
+                        "accuracy": 0.50121891760117,
+                        "macro_f1": 0.485314410821224,
+                        "fit_time": 1.165324449539185,
+                        "score_time": 5.339069128036499
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "256x192",
+                        "fold": 3,
+                        "accuracy": 0.603275224511358,
+                        "macro_f1": 0.5798040268735,
+                        "fit_time": 1.186574697494507,
+                        "score_time": 4.930134773254394
+                    },
+                    {
+                        "model": "KNN",
+                        "resolution": "256x192",
+                        "fold": 4,
+                        "accuracy": 0.558546059933407,
+                        "macro_f1": 0.541347809931036,
+                        "fit_time": 1.22063946723938,
+                        "score_time": 4.90750002861023
+                    }
+                ],
+                "metadata": {
+                    "experiment": {
+                        "model": "KNN",
+                        "resolution": "256x192",
+                        "feature_type": "HOG",
+                        "started_at": "2026-11-21T16:55:19.334024+00:00",
+                        "completed_at": "2026-11-21T16:55:44.939462+00:00"
+                    },
+                    "dataset": {
+                        "feature_file": "data/processed/driver_based/hog_256x192_train.npy",
+                        "metadata_file": "data/splits/driver_based/train.csv",
+                        "training_images": 15732,
+                        "hog_features": 25668,
+                        "unique_drivers": 18,
+                        "classes": [
+                            "c0",
+                            "c1",
+                            "c2",
+                            "c3",
+                            "c4",
+                            "c5",
+                            "c6",
+                            "c7",
+                            "c8",
+                            "c9"
+                        ]
+                    },
+                    "model_configuration": {
+                        "pipeline": [
+                            "StandardScaler",
+                            "KNeighborsClassifier"
+                        ],
+                        "scaler_parameters": {
+                            "copy": true,
+                            "with_mean": true,
+                            "with_std": true
+                        },
+                        "knn_parameters": {
+                            "algorithm": "auto",
+                            "leaf_size": 30,
+                            "metric": "minkowski",
+                            "metric_params": null,
+                            "n_jobs": -1,
+                            "n_neighbors": 5,
+                            "p": 2,
+                            "weights": "uniform"
+                        }
+                    },
+                    "cross_validation": {
+                        "method": "StratifiedGroupKFold",
+                        "n_splits": 4,
+                        "shuffle": true,
+                        "random_state": 42,
+                        "grouping": "subject",
+                        "parallel_workers": 1,
+                        "fold_details": [
+                            {
+                                "fold": 1,
+                                "training_images": 11492,
+                                "validation_images": 4240,
+                                "training_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p022",
+                                    "p024",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p049",
+                                    "p050",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p015",
+                                    "p042",
+                                    "p051",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.45966981132075474,
+                                "macro_f1": 0.4335993401496272,
+                                "fit_time_seconds": 1.1949028968811035,
+                                "score_time_seconds": 5.632385730743408
+                            },
+                            {
+                                "fold": 2,
+                                "training_images": 11630,
+                                "validation_images": 4102,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p024",
+                                    "p035",
+                                    "p042",
+                                    "p049",
+                                    "p051",
+                                    "p052",
+                                    "p056",
+                                    "p061",
+                                    "p064",
+                                    "p066"
+                                ],
+                                "validation_drivers": [
+                                    "p022",
+                                    "p039",
+                                    "p041",
+                                    "p050",
+                                    "p081"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5012189176011702,
+                                "macro_f1": 0.48531441082122395,
+                                "fit_time_seconds": 1.1653244495391846,
+                                "score_time_seconds": 5.339069128036499
+                            },
+                            {
+                                "fold": 3,
+                                "training_images": 11946,
+                                "validation_images": 3786,
+                                "training_drivers": [
+                                    "p002",
+                                    "p015",
+                                    "p021",
+                                    "p022",
+                                    "p035",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p050",
+                                    "p051",
+                                    "p056",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p024",
+                                    "p049",
+                                    "p052",
+                                    "p061"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.6032752245113576,
+                                "macro_f1": 0.5798040268735003,
+                                "fit_time_seconds": 1.1865746974945068,
+                                "score_time_seconds": 4.9301347732543945
+                            },
+                            {
+                                "fold": 4,
+                                "training_images": 12128,
+                                "validation_images": 3604,
+                                "training_drivers": [
+                                    "p015",
+                                    "p022",
+                                    "p024",
+                                    "p039",
+                                    "p041",
+                                    "p042",
+                                    "p049",
+                                    "p050",
+                                    "p051",
+                                    "p052",
+                                    "p061",
+                                    "p064",
+                                    "p066",
+                                    "p081"
+                                ],
+                                "validation_drivers": [
+                                    "p002",
+                                    "p021",
+                                    "p035",
+                                    "p056"
+                                ],
+                                "driver_overlap": 0,
+                                "accuracy": 0.5585460599334073,
+                                "macro_f1": 0.5413478099310358,
+                                "fit_time_seconds": 1.2206394672393799,
+                                "score_time_seconds": 4.9075000286102295
+                            }
+                        ]
+                    },
+                    "results": {
+                        "mean_accuracy": 0.5306775033416725,
+                        "std_accuracy": 0.05467400242689872,
+                        "mean_macro_f1": 0.5100163969438468,
+                        "std_macro_f1": 0.05545657178925078
+                    },
+                    "timing": {
+                        "total_execution_seconds": 25.60540597801446,
+                        "total_fit_time_seconds": 4.767441511154175,
+                        "total_score_time_seconds": 20.80908966064453
+                    },
+                    "warnings": [],
+                    "environment": {
+                        "python_version": "3.14.4",
+                        "sklearn_version": "1.9.1",
+                        "numpy_version": "2.5.4",
+                        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+                        "cpu_count": 32
+                    }
+                },
+                "source_csv": "../results/classical/driver_based/knn_256x192.csv",
+                "source_metadata": "../results/classical/driver_based/knn_256x192_metadata.json"
+            }
+        }
+    },
+    "comparison": [
+        {
+            "model": "Logistic Regression",
+            "resolution": "64x48",
+            "mean_accuracy": 0.48960902945067747,
+            "std_accuracy": 0.07464877357801145,
+            "mean_macro_f1": 0.49704148466881487,
+            "std_macro_f1": 0.06584609014164763,
+            "total_runtime_seconds": null
+        },
+        {
+            "model": "Logistic Regression",
+            "resolution": "128x96",
+            "mean_accuracy": 0.6104688056620746,
+            "std_accuracy": 0.13225573908550795,
+            "mean_macro_f1": 0.6108790413007463,
+            "std_macro_f1": 0.12362120778840612,
+            "total_runtime_seconds": null
+        },
+        {
+            "model": "Logistic Regression",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5890712612550054,
+            "std_accuracy": 0.11976533185925725,
+            "mean_macro_f1": 0.5866608084563104,
+            "std_macro_f1": 0.11309521211915016,
+            "total_runtime_seconds": 19.727031735004857
+        },
+        {
+            "model": "Linear SVM",
+            "resolution": "64x48",
+            "mean_accuracy": 0.43445594579255276,
+            "std_accuracy": 0.05284567064136211,
+            "mean_macro_f1": 0.42973416679779275,
+            "std_macro_f1": 0.04437474175373666,
+            "total_runtime_seconds": 40.3348228429968
+        },
+        {
+            "model": "Linear SVM",
+            "resolution": "128x96",
+            "mean_accuracy": 0.5011891322168187,
+            "std_accuracy": 0.09359660973118578,
+            "mean_macro_f1": 0.49338829027532893,
+            "std_macro_f1": 0.08809010037388144,
+            "total_runtime_seconds": 157.43785742801265
+        },
+        {
+            "model": "Linear SVM",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5519726832595199,
+            "std_accuracy": 0.08691714173492575,
+            "mean_macro_f1": 0.5434516949534163,
+            "std_macro_f1": 0.07943517276029283,
+            "total_runtime_seconds": 567.0184994390002
+        },
+        {
+            "model": "Random Forest",
+            "resolution": "64x48",
+            "mean_accuracy": 0.5294034591126219,
+            "std_accuracy": 0.08650414360934693,
+            "mean_macro_f1": 0.5134710303029337,
+            "std_macro_f1": 0.08075380138808567,
+            "total_runtime_seconds": 17.1
+        },
+        {
+            "model": "Random Forest",
+            "resolution": "128x96",
+            "mean_accuracy": 0.5554416575000001,
+            "std_accuracy": 0.12309884457119946,
+            "mean_macro_f1": 0.53912103,
+            "std_macro_f1": 0.1146509653365991,
+            "total_runtime_seconds": 37.7
+        },
+        {
+            "model": "Random Forest",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5325891941968248,
+            "std_accuracy": 0.11211442468939702,
+            "mean_macro_f1": 0.5145870771857093,
+            "std_macro_f1": 0.10428427357166854,
+            "total_runtime_seconds": 81.88294188899454
+        },
+        {
+            "model": "KNN",
+            "resolution": "64x48",
+            "mean_accuracy": 0.44593492756295006,
+            "std_accuracy": 0.07652041666311801,
+            "mean_macro_f1": 0.43598999894999646,
+            "std_macro_f1": 0.07824965891971487,
+            "total_runtime_seconds": null
+        },
+        {
+            "model": "KNN",
+            "resolution": "128x96",
+            "mean_accuracy": 0.533871878740457,
+            "std_accuracy": 0.04528640208929405,
+            "mean_macro_f1": 0.5170431447990683,
+            "std_macro_f1": 0.05049364754673473,
+            "total_runtime_seconds": 6.308383880008478
+        },
+        {
+            "model": "KNN",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5306775033416725,
+            "std_accuracy": 0.05467400242689872,
+            "mean_macro_f1": 0.5100163969438468,
+            "std_macro_f1": 0.05545657178925078,
+            "total_runtime_seconds": 25.60540597801446
+        }
     ],
-    "models": [
-      "Logistic Regression",
-      "Linear SVM",
-      "Random Forest",
-      "KNN"
+    "ranking": [
+        {
+            "model": "Logistic Regression",
+            "resolution": "128x96",
+            "mean_accuracy": 0.6104688056620746,
+            "std_accuracy": 0.13225573908550795,
+            "mean_macro_f1": 0.6108790413007463,
+            "std_macro_f1": 0.12362120778840612,
+            "total_runtime_seconds": null
+        },
+        {
+            "model": "Logistic Regression",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5890712612550054,
+            "std_accuracy": 0.11976533185925725,
+            "mean_macro_f1": 0.5866608084563104,
+            "std_macro_f1": 0.11309521211915016,
+            "total_runtime_seconds": 19.727031735004857
+        },
+        {
+            "model": "Linear SVM",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5519726832595199,
+            "std_accuracy": 0.08691714173492575,
+            "mean_macro_f1": 0.5434516949534163,
+            "std_macro_f1": 0.07943517276029283,
+            "total_runtime_seconds": 567.0184994390002
+        },
+        {
+            "model": "Random Forest",
+            "resolution": "128x96",
+            "mean_accuracy": 0.5554416575000001,
+            "std_accuracy": 0.12309884457119946,
+            "mean_macro_f1": 0.53912103,
+            "std_macro_f1": 0.1146509653365991,
+            "total_runtime_seconds": 37.7
+        },
+        {
+            "model": "KNN",
+            "resolution": "128x96",
+            "mean_accuracy": 0.533871878740457,
+            "std_accuracy": 0.04528640208929405,
+            "mean_macro_f1": 0.5170431447990683,
+            "std_macro_f1": 0.05049364754673473,
+            "total_runtime_seconds": 6.308383880008478
+        },
+        {
+            "model": "Random Forest",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5325891941968248,
+            "std_accuracy": 0.11211442468939702,
+            "mean_macro_f1": 0.5145870771857093,
+            "std_macro_f1": 0.10428427357166854,
+            "total_runtime_seconds": 81.88294188899454
+        },
+        {
+            "model": "Random Forest",
+            "resolution": "64x48",
+            "mean_accuracy": 0.5294034591126219,
+            "std_accuracy": 0.08650414360934693,
+            "mean_macro_f1": 0.5134710303029337,
+            "std_macro_f1": 0.08075380138808567,
+            "total_runtime_seconds": 17.1
+        },
+        {
+            "model": "KNN",
+            "resolution": "256x192",
+            "mean_accuracy": 0.5306775033416725,
+            "std_accuracy": 0.05467400242689872,
+            "mean_macro_f1": 0.5100163969438468,
+            "std_macro_f1": 0.05545657178925078,
+            "total_runtime_seconds": 25.60540597801446
+        },
+        {
+            "model": "Logistic Regression",
+            "resolution": "64x48",
+            "mean_accuracy": 0.48960902945067747,
+            "std_accuracy": 0.07464877357801145,
+            "mean_macro_f1": 0.49704148466881487,
+            "std_macro_f1": 0.06584609014164763,
+            "total_runtime_seconds": null
+        },
+        {
+            "model": "Linear SVM",
+            "resolution": "128x96",
+            "mean_accuracy": 0.5011891322168187,
+            "std_accuracy": 0.09359660973118578,
+            "mean_macro_f1": 0.49338829027532893,
+            "std_macro_f1": 0.08809010037388144,
+            "total_runtime_seconds": 157.43785742801265
+        },
+        {
+            "model": "KNN",
+            "resolution": "64x48",
+            "mean_accuracy": 0.44593492756295006,
+            "std_accuracy": 0.07652041666311801,
+            "mean_macro_f1": 0.43598999894999646,
+            "std_macro_f1": 0.07824965891971487,
+            "total_runtime_seconds": null
+        },
+        {
+            "model": "Linear SVM",
+            "resolution": "64x48",
+            "mean_accuracy": 0.43445594579255276,
+            "std_accuracy": 0.05284567064136211,
+            "mean_macro_f1": 0.42973416679779275,
+            "std_macro_f1": 0.04437474175373666,
+            "total_runtime_seconds": 40.3348228429968
+        }
     ],
-    "count_primary_experiments": 8,
-    "256x192": "not_run_in_supplied_evidence"
-  },
-  "dataset_and_methodology": {
-    "project": "distracted-driver-detection",
-    "data_split": "driver_based",
-    "train_image_count": 15732,
-    "train_driver_count": 18,
-    "class_labels": [
-      "c0",
-      "c1",
-      "c2",
-      "c3",
-      "c4",
-      "c5",
-      "c6",
-      "c7",
-      "c8",
-      "c9"
+    "missing_metadata": [
+        "../results/classical/driver_based/logistic_regression_64x48_metadata.json",
+        "../results/classical/driver_based/logistic_regression_128x96_metadata.json",
+        "../results/classical/driver_based/knn_64x48_metadata.json"
     ],
-    "cv_method": "StratifiedGroupKFold",
-    "cv_folds": 4,
-    "cv_shuffle": true,
-    "cv_seed": 42,
-    "cv_grouping": "subject",
-    "metrics": [
-      "accuracy",
-      "macro_f1"
-    ],
-    "summary_std_definition": "population standard deviation (numpy.std, ddof=0)",
-    "test_set_policy": "held out; no held-out test-set scores included",
-    "hog_feature_counts": {
-      "64x48": 1260,
-      "128x96": 5940
-    },
-    "image_alignment": "HOG feature rows assumed to match train.csv; not independently validated in screenshots"
-  },
-  "machine_and_software": {
-    "workstation_reported": {
-      "cpu": "AMD Ryzen 9 9950X",
-      "ram_gb": 96,
-      "gpu": "NVIDIA RTX 4090 (24 GB)"
-    },
-    "execution": "scikit-learn classical models on CPU; no GPU usage established",
-    "operating_system": "Ubuntu Linux",
-    "python_version_observed_in_screenshot": "3.14.4",
-    "sklearn_version": "unavailable from provided screenshots/notebook"
-  },
-  "primary_experiments": [
-    {
-      "experiment_id": "logistic_regression_64x48",
-      "model_name": "Logistic Regression",
-      "resolution": "64x48",
-      "hog_features": 1260,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "pipeline": [
-          {
-            "name": "scaler",
-            "type": "StandardScaler",
-            "kwargs": {}
-          },
-          {
-            "name": "logreg",
-            "type": "LogisticRegression",
-            "kwargs": {
-              "max_iter": 1000
-            }
-          }
-        ]
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.40660377,
-          "macro_f1": 0.4266527,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.4363725,
-          "macro_f1": 0.44388998,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.59825674,
-          "macro_f1": 0.58989271,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.51720311,
-          "macro_f1": 0.52773054,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.48960903,
-        "std_accuracy_population": 0.07464877670363894,
-        "mean_macro_f1": 0.4970414825,
-        "std_macro_f1_population": 0.06584609255364905
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": null,
-        "time_precision": null,
-        "sum_known_fit_time_seconds": null,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported"
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/logistic_regression_64x48.csv"
-      },
-      "status": "completed",
-      "provenance": [
-        "uploaded 07_classical_driver_based.ipynb, cells 3-4"
-      ],
-      "notes": "Wall-time and fit-time not supplied in uploaded notebook."
-    },
-    {
-      "experiment_id": "linear_svm_64x48",
-      "model_name": "Linear SVM",
-      "resolution": "64x48",
-      "hog_features": 1260,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "pipeline": [
-          {
-            "name": "scaler",
-            "type": "StandardScaler",
-            "kwargs": {}
-          },
-          {
-            "name": "svm",
-            "type": "LinearSVC",
-            "kwargs": {
-              "C": 1.0,
-              "max_iter": 5000,
-              "random_state": 42
-            }
-          }
-        ]
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.39056604,
-          "macro_f1": 0.38964779,
-          "fit_time_seconds": 188.063229,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.38347148,
-          "macro_f1": 0.38435511,
-          "fit_time_seconds": 197.629248,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.52139461,
-          "macro_f1": 0.49864697,
-          "fit_time_seconds": 199.26391,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.45754717,
-          "macro_f1": 0.46050837,
-          "fit_time_seconds": 210.143842,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.438244825,
-        "std_accuracy_population": 0.05603537527671806,
-        "mean_macro_f1": 0.43328955999999996,
-        "std_macro_f1_population": 0.04824841744881277
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": 780,
-        "time_precision": "approximate_user_recalled_duration_13_minutes",
-        "sum_known_fit_time_seconds": 795.100229,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported",
-        "explanation": "No convergence messages shown in uploaded notebook outputs; do not assume guaranteed convergence."
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/linear_svm_64x48.csv"
-      },
-      "status": "completed",
-      "provenance": [
-        "uploaded 07_classical_driver_based.ipynb, cells 6-7",
-        "user stated 64x48 SVM took ~13 minutes"
-      ],
-      "notes": null
-    },
-    {
-      "experiment_id": "random_forest_64x48",
-      "model_name": "Random Forest",
-      "resolution": "64x48",
-      "hog_features": 1260,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "estimator": "RandomForestClassifier",
-        "explicit_kwargs": {
-          "n_estimators": 500,
-          "max_depth": null,
-          "random_state": 42,
-          "n_jobs": -1
-        },
-        "other_parameters": "scikit-learn defaults; full get_params() saved in local metadata JSON"
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.40471698,
-          "macro_f1": 0.4007372,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.49536811,
-          "macro_f1": 0.47444469,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.62651875,
-          "macro_f1": 0.60233494,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.59100999,
-          "macro_f1": 0.57636729,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.5294034575,
-        "std_accuracy_population": 0.0865041435927174,
-        "mean_macro_f1": 0.5134710299999999,
-        "std_macro_f1_population": 0.08075380124604072
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": 17.1,
-        "time_precision": "approximate_notebook_cell_elapsed",
-        "sum_known_fit_time_seconds": null,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported"
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/random_forest_64x48.csv",
-        "metadata_json": "results/classical/driver_based/random_forest_64x48_metadata.json"
-      },
-      "status": "completed",
-      "provenance": [
-        "Nov 21 2026 screenshots: X_train.shape=(15732,1260), 500-tree RF run, saved 64x48 CSV read-back verified"
-      ],
-      "notes": "RF 64x48 500-tree run verified; exact per-fold fit/score timings available in the user’s CSV, but not available in this chat. Wall time ~17.1 s from VS Code execution indicator."
-    },
-    {
-      "experiment_id": "knn_64x48",
-      "model_name": "KNN",
-      "resolution": "64x48",
-      "hog_features": 1260,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "pipeline": [
-          {
-            "name": "scaler",
-            "type": "StandardScaler",
-            "kwargs": {}
-          },
-          {
-            "name": "knn",
-            "type": "KNeighborsClassifier",
-            "kwargs": {
-              "n_neighbors": 5,
-              "weights": "uniform",
-              "n_jobs": -1
-            }
-          }
-        ]
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.34716981,
-          "macro_f1": 0.33596405,
-          "fit_time_seconds": 0.070482,
-          "score_time_seconds": 0.285926,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.39980497,
-          "macro_f1": 0.38707672,
-          "fit_time_seconds": 0.065658,
-          "score_time_seconds": 0.234601,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.54120444,
-          "macro_f1": 0.53285261,
-          "fit_time_seconds": 0.06658,
-          "score_time_seconds": 0.213542,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.49556049,
-          "macro_f1": 0.48806661,
-          "fit_time_seconds": 0.065749,
-          "score_time_seconds": 0.219081,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.44593492749999997,
-        "std_accuracy_population": 0.07652041864621768,
-        "mean_macro_f1": 0.43598999749999995,
-        "std_macro_f1_population": 0.07824966159489934
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": null,
-        "time_precision": null,
-        "sum_known_fit_time_seconds": 0.268469,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported"
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/knn_64x48.csv"
-      },
-      "status": "completed",
-      "provenance": [
-        "uploaded 07_classical_driver_based.ipynb, cells 13-14"
-      ],
-      "notes": null
-    },
-    {
-      "experiment_id": "logistic_regression_128x96",
-      "model_name": "Logistic Regression",
-      "resolution": "128x96",
-      "hog_features": 5940,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "pipeline": [
-          {
-            "name": "scaler",
-            "type": "StandardScaler",
-            "kwargs": {}
-          },
-          {
-            "name": "logreg",
-            "type": "LogisticRegression",
-            "kwargs": {
-              "max_iter": 1000
-            }
-          }
-        ]
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.41014151,
-          "macro_f1": 0.4255203,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.58069235,
-          "macro_f1": 0.57923797,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.76069731,
-          "macro_f1": 0.75273559,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.69034406,
-          "macro_f1": 0.68602231,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.6104688075,
-        "std_accuracy_population": 0.13225573945034869,
-        "mean_macro_f1": 0.6108790424999999,
-        "std_macro_f1_population": 0.12362120733244748
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": 15.3,
-        "time_precision": "approximate_notebook_cell_elapsed",
-        "sum_known_fit_time_seconds": null,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported"
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/logistic_regression_128x96.csv"
-      },
-      "status": "completed",
-      "provenance": [
-        "Nov 20 2026 LR screenshot at 128x96: fold metrics and 15.3 s wall time"
-      ],
-      "notes": null
-    },
-    {
-      "experiment_id": "linear_svm_128x96",
-      "model_name": "Linear SVM",
-      "resolution": "128x96",
-      "hog_features": 5940,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "pipeline": [
-          {
-            "name": "scaler",
-            "type": "StandardScaler",
-            "kwargs": {}
-          },
-          {
-            "name": "svm",
-            "type": "LinearSVC",
-            "kwargs": {
-              "C": 1.0,
-              "max_iter": 5000,
-              "random_state": 42
-            }
-          }
-        ]
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 4
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.37971698,
-          "macro_f1": 0.37915257,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": 128.9
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.46343247,
-          "macro_f1": 0.45890352,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": 147.8
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.64315901,
-          "macro_f1": 0.62867891,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": 157.6
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.57852386,
-          "macro_f1": 0.55977324,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": 161.9
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.51620808,
-        "std_accuracy_population": 0.10175323146583036,
-        "mean_macro_f1": 0.50662706,
-        "std_macro_f1_population": 0.09519513171363672
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": 9714.0,
-        "time_precision": "approximate_verbose_parallel_elapsed_161.9_minutes",
-        "sum_known_fit_time_seconds": null,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "convergence_warning",
-        "message": "Liblinear failed to converge (at least some folds and final refit); accuracy preliminary, not a converged SVM benchmark."
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/linear_svm_128x96.csv",
-        "fitted_model": "models/classical/driver_based/linear_svm_128x96.joblib",
-        "final_refit_wall_seconds_approx": 4260
-      },
-      "status": "completed",
-      "provenance": [
-        "Nov 21 2026 screenshot: four-fold scores, CV fold end messages, convergence warning",
-        "Nov 21 2026 screenshot: final full-training model saved"
-      ],
-      "notes": "After parallel cross-validation, one separate full-training refit took roughly 71 minutes; not included in CV wall time."
-    },
-    {
-      "experiment_id": "random_forest_128x96",
-      "model_name": "Random Forest",
-      "resolution": "128x96",
-      "hog_features": 5940,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "estimator": "RandomForestClassifier",
-        "explicit_kwargs": {
-          "n_estimators": 500,
-          "max_depth": null,
-          "random_state": 42,
-          "n_jobs": -1
-        },
-        "other_parameters": "scikit-learn defaults"
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.34245283,
-          "macro_f1": 0.34124818,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.61774744,
-          "macro_f1": 0.59207357,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.62810354,
-          "macro_f1": 0.60380973,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.63346282,
-          "macro_f1": 0.61935264,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.5554416575000001,
-        "std_accuracy_population": 0.12309884457119946,
-        "mean_macro_f1": 0.53912103,
-        "std_macro_f1_population": 0.1146509653365991
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": 37.7,
-        "time_precision": "approximate_notebook_cell_elapsed",
-        "sum_known_fit_time_seconds": null,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported"
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/random_forest_128x96.csv",
-        "metadata_json": "results/classical/driver_based/random_forest_128x96_metadata.json (save status not independently confirmed)"
-      },
-      "status": "completed",
-      "provenance": [
-        "Nov 21 2026 screenshot: 128x96 500-tree RF run, 37.7 s notebook execution time"
-      ],
-      "notes": "Approximate fold elapsed seconds [9.4,9.1,9.4,9.8] reported in output; exact fit_time and score_time available from user session where rf_scores was computed, not in this copy."
-    },
-    {
-      "experiment_id": "knn_128x96",
-      "model_name": "KNN",
-      "resolution": "128x96",
-      "hog_features": 5940,
-      "dataset": {
-        "num_training_images": 15732,
-        "num_classes": 10,
-        "num_drivers": 18,
-        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
-        "metadata_file": "data/splits/driver_based/train.csv",
-        "feature_row_alignment_assumed": true
-      },
-      "model_configuration": {
-        "pipeline": [
-          {
-            "name": "scaler",
-            "type": "StandardScaler",
-            "kwargs": {}
-          },
-          {
-            "name": "knn",
-            "type": "KNeighborsClassifier",
-            "kwargs": {
-              "n_neighbors": 5,
-              "weights": "uniform",
-              "n_jobs": -1
-            }
-          }
-        ]
-      },
-      "cross_validation": {
-        "strategy": "StratifiedGroupKFold",
-        "n_splits": 4,
-        "shuffle": true,
-        "random_state": 42,
-        "groups": "subject",
-        "cv_parallel_jobs": 1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.4740566,
-          "macro_f1": 0.45366837,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.50633837,
-          "macro_f1": 0.48134506,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.58267301,
-          "macro_f1": 0.5666081,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.57241953,
-          "macro_f1": 0.56655105,
-          "fit_time_seconds": null,
-          "score_time_seconds": null,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.5338718775,
-        "std_accuracy_population": 0.045286403876323295,
-        "mean_macro_f1": 0.5170431449999999,
-        "std_macro_f1_population": 0.05049364514621838
-      },
-      "timing": {
-        "cross_validation_wall_time_seconds": 6.31,
-        "time_precision": "measured_by_time.perf_counter_in_notebook",
-        "sum_known_fit_time_seconds": null,
-        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
-      },
-      "convergence": {
-        "status": "not_reported"
-      },
-      "artifacts": {
-        "cv_csv": "results/classical/driver_based/knn_128x96.csv (save not confirmed)",
-        "metadata_json": "results/classical/driver_based/knn_128x96_metadata.json (save not confirmed)"
-      },
-      "status": "completed",
-      "provenance": [
-        "Nov 21 2026 screenshot: KNN 128x96 4-fold output, measured wall time 6.31 s"
-      ],
-      "notes": "The screenshot does not show a post-run verification of X_train.shape or an executed KNN results-saving cell; resolution inferred from preceding workflow."
+    "best_experiment": {
+        "model": "Logistic Regression",
+        "resolution": "128x96",
+        "mean_accuracy": 0.6104688056620746,
+        "std_accuracy": 0.13225573908550795,
+        "mean_macro_f1": 0.6108790413007463,
+        "std_macro_f1": 0.12362120778840612,
+        "total_runtime_seconds": null
     }
-  ],
-  "historical_trials": [
-    {
-      "run": "historical_baseline_64x48_random_forest_100_trees",
-      "status": "superseded_by_verified_500_tree_run",
-      "resolution": "64x48",
-      "model": "Random Forest",
-      "hyperparameters": {
-        "n_estimators": 100,
-        "max_depth": null,
-        "random_state": 42,
-        "n_jobs": -1
-      },
-      "fold_results": [
-        {
-          "fold": 1,
-          "accuracy": 0.38985849,
-          "macro_f1": 0.38075898,
-          "fit_time_seconds": 0.98310685,
-          "score_time_seconds": 0.02952719,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 2,
-          "accuracy": 0.42881521,
-          "macro_f1": 0.41202571,
-          "fit_time_seconds": 0.95037127,
-          "score_time_seconds": 0.02956223,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 3,
-          "accuracy": 0.59852087,
-          "macro_f1": 0.58290448,
-          "fit_time_seconds": 0.98350501,
-          "score_time_seconds": 0.01895189,
-          "verbose_elapsed_minutes_approx": null
-        },
-        {
-          "fold": 4,
-          "accuracy": 0.5463374,
-          "macro_f1": 0.53615265,
-          "fit_time_seconds": 1.01869798,
-          "score_time_seconds": 0.02872872,
-          "verbose_elapsed_minutes_approx": null
-        }
-      ],
-      "summary": {
-        "mean_accuracy": 0.4908829925,
-        "mean_macro_f1": 0.47796045499999995
-      },
-      "source": "uploaded 07_classical_driver_based.ipynb, cells 9-11"
-    }
-  ],
-  "comparisons": {
-    "64x48": {
-      "Logistic Regression": {
-        "mean_accuracy": 0.48960903,
-        "mean_macro_f1": 0.4970414825
-      },
-      "Linear SVM": {
-        "mean_accuracy": 0.438244825,
-        "mean_macro_f1": 0.43328955999999996
-      },
-      "Random Forest": {
-        "mean_accuracy": 0.5294034575,
-        "mean_macro_f1": 0.5134710299999999
-      },
-      "KNN": {
-        "mean_accuracy": 0.44593492749999997,
-        "mean_macro_f1": 0.43598999749999995
-      }
-    },
-    "128x96": {
-      "Logistic Regression": {
-        "mean_accuracy": 0.6104688075,
-        "mean_macro_f1": 0.6108790424999999
-      },
-      "Linear SVM": {
-        "mean_accuracy": 0.51620808,
-        "mean_macro_f1": 0.50662706
-      },
-      "Random Forest": {
-        "mean_accuracy": 0.5554416575000001,
-        "mean_macro_f1": 0.53912103
-      },
-      "KNN": {
-        "mean_accuracy": 0.5338718775,
-        "mean_macro_f1": 0.5170431449999999
-      }
-    },
-    "rf_500_128_minus_64_accuracy_percentage_points": 2.6038200000000122
-  },
-  "important_caveats": [
-    "This JSON is a results and reproducibility report. It does not serialize fitted weights/models; trained estimators require separate .joblib/.pkl or model-specific weights.",
-    "The uploaded notebook is an older version containing only the initial 64x48 experiments; later experimental data are transcribed from screenshots, so some exact timing and software-version fields are unavailable.",
-    "Use saved CSV and per-model metadata JSON files from the user’s workstation to fill missing per-fold fit/score timings and to verify the latest model settings.",
-    "128x96 Linear SVM issued non-convergence warnings; its accuracy should be treated as preliminary.",
-    "One attempted 64x48 Random Forest 500-tree rerun actually used 128x96 HOG features. That mislabeled duplicate is excluded from primary comparisons; subsequent 64x48 result was shape-checked and CSV-verified.",
-    "Wall-clock runtimes noted as approximate come from notebook-cell elapsed indicators and may include display or scheduling overhead.",
-    "For true apples-to-apples speed comparisons, ensure identical parallelism and hardware load and measure durations with time.perf_counter()."
-  ]
 }

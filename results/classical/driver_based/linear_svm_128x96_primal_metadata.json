@@ -1,0 +1,234 @@
+{
+    "experiment": {
+        "model": "Linear SVM",
+        "resolution": "128x96",
+        "feature_type": "HOG",
+        "experiment_variant": "primal",
+        "started_at": "2026-11-21T18:44:37.116356+00:00",
+        "completed_at": "2026-11-21T18:47:14.554256+00:00"
+    },
+    "dataset": {
+        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "training_images": 15732,
+        "hog_features": 5940,
+        "unique_drivers": 18,
+        "classes": [
+            "c0",
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5",
+            "c6",
+            "c7",
+            "c8",
+            "c9"
+        ]
+    },
+    "model_configuration": {
+        "pipeline": [
+            "StandardScaler",
+            "LinearSVC"
+        ],
+        "scaler_parameters": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+        },
+        "svm_parameters": {
+            "C": 1.0,
+            "class_weight": null,
+            "dual": false,
+            "fit_intercept": true,
+            "intercept_scaling": 1,
+            "loss": "squared_hinge",
+            "max_iter": 1000,
+            "multi_class": "ovr",
+            "penalty": "l2",
+            "random_state": 42,
+            "tol": 0.01,
+            "verbose": 0
+        }
+    },
+    "cross_validation": {
+        "method": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "grouping": "subject",
+        "parallel_workers": 4,
+        "fold_details": [
+            {
+                "fold": 1,
+                "training_images": 11492,
+                "validation_images": 4240,
+                "training_drivers": [
+                    "p002",
+                    "p021",
+                    "p022",
+                    "p024",
+                    "p035",
+                    "p039",
+                    "p041",
+                    "p049",
+                    "p050",
+                    "p052",
+                    "p056",
+                    "p061",
+                    "p081"
+                ],
+                "validation_drivers": [
+                    "p015",
+                    "p042",
+                    "p051",
+                    "p064",
+                    "p066"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.37735849056603776,
+                "macro_f1": 0.37690470733633796,
+                "fit_time_seconds": 141.62943625450134,
+                "score_time_seconds": 0.11969232559204102,
+                "iterations": 6,
+                "iteration_limit_reached": false
+            },
+            {
+                "fold": 2,
+                "training_images": 11630,
+                "validation_images": 4102,
+                "training_drivers": [
+                    "p002",
+                    "p015",
+                    "p021",
+                    "p024",
+                    "p035",
+                    "p042",
+                    "p049",
+                    "p051",
+                    "p052",
+                    "p056",
+                    "p061",
+                    "p064",
+                    "p066"
+                ],
+                "validation_drivers": [
+                    "p022",
+                    "p039",
+                    "p041",
+                    "p050",
+                    "p081"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.4514870794734276,
+                "macro_f1": 0.4488455868878474,
+                "fit_time_seconds": 147.28865551948547,
+                "score_time_seconds": 0.08408904075622559,
+                "iterations": 5,
+                "iteration_limit_reached": false
+            },
+            {
+                "fold": 3,
+                "training_images": 11946,
+                "validation_images": 3786,
+                "training_drivers": [
+                    "p002",
+                    "p015",
+                    "p021",
+                    "p022",
+                    "p035",
+                    "p039",
+                    "p041",
+                    "p042",
+                    "p050",
+                    "p051",
+                    "p056",
+                    "p064",
+                    "p066",
+                    "p081"
+                ],
+                "validation_drivers": [
+                    "p024",
+                    "p049",
+                    "p052",
+                    "p061"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.620972002113048,
+                "macro_f1": 0.6094137775748267,
+                "fit_time_seconds": 156.8723316192627,
+                "score_time_seconds": 0.0627286434173584,
+                "iterations": 5,
+                "iteration_limit_reached": false
+            },
+            {
+                "fold": 4,
+                "training_images": 12128,
+                "validation_images": 3604,
+                "training_drivers": [
+                    "p015",
+                    "p022",
+                    "p024",
+                    "p039",
+                    "p041",
+                    "p042",
+                    "p049",
+                    "p050",
+                    "p051",
+                    "p052",
+                    "p061",
+                    "p064",
+                    "p066",
+                    "p081"
+                ],
+                "validation_drivers": [
+                    "p002",
+                    "p021",
+                    "p035",
+                    "p056"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.5549389567147613,
+                "macro_f1": 0.5383890893023036,
+                "fit_time_seconds": 157.38304114341736,
+                "score_time_seconds": 0.04422783851623535,
+                "iterations": 5,
+                "iteration_limit_reached": false
+            }
+        ]
+    },
+    "results": {
+        "mean_accuracy": 0.5011891322168187,
+        "std_accuracy": 0.09359660973118578,
+        "mean_macro_f1": 0.49338829027532893,
+        "std_macro_f1": 0.08809010037388144
+    },
+    "timing": {
+        "total_execution_seconds": 157.43785742801265,
+        "total_fit_time_seconds": 603.1734645366669,
+        "total_score_time_seconds": 0.31073784828186035
+    },
+    "convergence": {
+        "iterations_per_fold": [
+            6,
+            5,
+            5,
+            5
+        ],
+        "iteration_limit_reached": [
+            false,
+            false,
+            false,
+            false
+        ],
+        "convergence_verified": false,
+        "note": "Review worker output for convergence warnings."
+    },
+    "environment": {
+        "python_version": "3.14.4",
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.4",
+        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+        "cpu_count": 32
+    }
+}

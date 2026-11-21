@@ -1,0 +1,5 @@
+model,resolution,fold,accuracy,macro_f1,fit_time,score_time,verbose_elapsed_minutes_approx
+Random Forest,128x96,1,0.34245283,0.34124818,,,
+Random Forest,128x96,2,0.61774744,0.59207357,,,
+Random Forest,128x96,3,0.62810354,0.60380973,,,
+Random Forest,128x96,4,0.63346282,0.61935264,,,

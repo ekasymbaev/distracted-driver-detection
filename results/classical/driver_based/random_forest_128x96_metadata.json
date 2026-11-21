@@ -1,0 +1,44 @@
+{
+    "experiment": {
+        "model": "Random Forest",
+        "resolution": "128x96",
+        "feature_type": "HOG",
+        "status": "recovered_from_previous_results"
+    },
+    "dataset": {
+        "training_images": 15732,
+        "hog_features": 5940
+    },
+    "model_configuration": {
+        "estimator": "RandomForestClassifier",
+        "explicit_kwargs": {
+            "n_estimators": 500,
+            "max_depth": null,
+            "random_state": 42,
+            "n_jobs": -1
+        },
+        "other_parameters": "scikit-learn defaults"
+    },
+    "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+    },
+    "results": {
+        "mean_accuracy": 0.5554416575000001,
+        "std_accuracy": 0.12309884457119946,
+        "mean_macro_f1": 0.53912103,
+        "std_macro_f1": 0.1146509653365991
+    },
+    "timing": {
+        "total_execution_seconds": 37.7,
+        "precision": "approximate",
+        "per_fold_times": "unavailable"
+    },
+    "provenance": [
+        "Nov 21 2026 screenshot: 128x96 500-tree RF run, 37.7 s notebook execution time"
+    ]
+}
