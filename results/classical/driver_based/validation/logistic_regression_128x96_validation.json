@@ -1,0 +1,305 @@
+{
+    "experiment": {
+        "model": "Logistic Regression",
+        "resolution": "128x96",
+        "feature_type": "HOG",
+        "evaluation_type": "Held-out driver validation",
+        "started_at": "2026-11-21T19:27:45.089647+00:00",
+        "completed_at": "2026-11-21T19:27:49.086897+00:00"
+    },
+    "dataset": {
+        "training_images": 15732,
+        "validation_images": 3603,
+        "training_drivers": [
+            "p002",
+            "p015",
+            "p021",
+            "p022",
+            "p024",
+            "p035",
+            "p039",
+            "p041",
+            "p042",
+            "p049",
+            "p050",
+            "p051",
+            "p052",
+            "p056",
+            "p061",
+            "p064",
+            "p066",
+            "p081"
+        ],
+        "validation_drivers": [
+            "p014",
+            "p016",
+            "p047",
+            "p075"
+        ],
+        "driver_overlap": 0,
+        "hog_features": 5940,
+        "classes": [
+            "c0",
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5",
+            "c6",
+            "c7",
+            "c8",
+            "c9"
+        ]
+    },
+    "model_configuration": {
+        "pipeline": [
+            "StandardScaler",
+            "LogisticRegression"
+        ],
+        "scaler_parameters": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+        },
+        "logistic_regression_parameters": {
+            "C": 1.0,
+            "class_weight": null,
+            "dual": false,
+            "fit_intercept": true,
+            "intercept_scaling": 1,
+            "l1_ratio": 0.0,
+            "max_iter": 1000,
+            "n_jobs": null,
+            "penalty": "deprecated",
+            "random_state": null,
+            "solver": "lbfgs",
+            "tol": 0.0001,
+            "verbose": 0,
+            "warm_start": false
+        }
+    },
+    "results": {
+        "accuracy": 0.5170691090757702,
+        "macro_f1": 0.5056881770105773,
+        "classification_report": {
+            "c0": {
+                "precision": 0.5186915887850467,
+                "recall": 0.29838709677419356,
+                "f1-score": 0.378839590443686,
+                "support": 372.0
+            },
+            "c1": {
+                "precision": 0.8338870431893688,
+                "recall": 0.6657824933687002,
+                "f1-score": 0.7404129793510325,
+                "support": 377.0
+            },
+            "c2": {
+                "precision": 0.5047021943573667,
+                "recall": 0.43869209809264303,
+                "f1-score": 0.46938775510204084,
+                "support": 367.0
+            },
+            "c3": {
+                "precision": 0.3557692307692308,
+                "recall": 0.7531806615776081,
+                "f1-score": 0.483265306122449,
+                "support": 393.0
+            },
+            "c4": {
+                "precision": 0.48046875,
+                "recall": 0.3253968253968254,
+                "f1-score": 0.38801261829652994,
+                "support": 378.0
+            },
+            "c5": {
+                "precision": 0.5349301397205589,
+                "recall": 0.7204301075268817,
+                "f1-score": 0.6139747995418099,
+                "support": 372.0
+            },
+            "c6": {
+                "precision": 0.9405940594059405,
+                "recall": 0.510752688172043,
+                "f1-score": 0.662020905923345,
+                "support": 372.0
+            },
+            "c7": {
+                "precision": 0.6304347826086957,
+                "recall": 0.9327485380116959,
+                "f1-score": 0.7523584905660378,
+                "support": 342.0
+            },
+            "c8": {
+                "precision": 0.6098901098901099,
+                "recall": 0.3724832214765101,
+                "f1-score": 0.4625,
+                "support": 298.0
+            },
+            "c9": {
+                "precision": 0.11379310344827587,
+                "recall": 0.09939759036144578,
+                "f1-score": 0.10610932475884244,
+                "support": 332.0
+            },
+            "accuracy": 0.5170691090757702,
+            "macro avg": {
+                "precision": 0.5523161002174594,
+                "recall": 0.5117251320758547,
+                "f1-score": 0.5056881770105773,
+                "support": 3603.0
+            },
+            "weighted avg": {
+                "precision": 0.5545431994591181,
+                "recall": 0.5170691090757702,
+                "f1-score": 0.5090068454153784,
+                "support": 3603.0
+            }
+        },
+        "confusion_matrix": [
+            [
+                111,
+                0,
+                0,
+                132,
+                9,
+                22,
+                0,
+                18,
+                8,
+                72
+            ],
+            [
+                5,
+                251,
+                52,
+                0,
+                9,
+                0,
+                2,
+                32,
+                2,
+                24
+            ],
+            [
+                1,
+                1,
+                161,
+                5,
+                75,
+                39,
+                3,
+                3,
+                28,
+                51
+            ],
+            [
+                12,
+                3,
+                1,
+                296,
+                10,
+                22,
+                0,
+                29,
+                1,
+                19
+            ],
+            [
+                16,
+                1,
+                4,
+                133,
+                123,
+                23,
+                2,
+                10,
+                5,
+                61
+            ],
+            [
+                3,
+                1,
+                5,
+                78,
+                6,
+                268,
+                0,
+                9,
+                0,
+                2
+            ],
+            [
+                1,
+                37,
+                43,
+                14,
+                11,
+                30,
+                190,
+                19,
+                25,
+                2
+            ],
+            [
+                0,
+                1,
+                16,
+                1,
+                0,
+                1,
+                0,
+                319,
+                0,
+                4
+            ],
+            [
+                5,
+                5,
+                18,
+                73,
+                13,
+                19,
+                3,
+                29,
+                111,
+                22
+            ],
+            [
+                60,
+                1,
+                19,
+                100,
+                0,
+                77,
+                2,
+                38,
+                2,
+                33
+            ]
+        ],
+        "confusion_matrix_labels": [
+            "c0",
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5",
+            "c6",
+            "c7",
+            "c8",
+            "c9"
+        ]
+    },
+    "timing": {
+        "training_seconds": 3.931639743008418,
+        "prediction_seconds": 0.06555210700025782,
+        "total_execution_seconds": 3.997191850008676
+    },
+    "environment": {
+        "python_version": "3.14.4",
+        "sklearn_version": "1.9.1",
+        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43"
+    },
+    "saved_model": "../models/classical/driver_based/logistic_regression_128x96.joblib"
+}
