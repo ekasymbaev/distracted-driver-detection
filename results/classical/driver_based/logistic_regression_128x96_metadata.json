@@ -1,0 +1,107 @@
+{
+    "experiment": {
+        "model": "Logistic Regression",
+        "resolution": "128x96",
+        "feature_type": "HOG",
+        "status": "reconstructed_from_saved_results"
+    },
+    "dataset": {
+        "training_images": 15732,
+        "hog_features": 5940,
+        "unique_drivers": 18,
+        "number_of_classes": 10
+    },
+    "model_configuration": {
+        "pipeline": [
+            "StandardScaler",
+            "LogisticRegression"
+        ],
+        "scaler_parameters": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+        },
+        "estimator_parameters": {
+            "C": 1.0,
+            "class_weight": null,
+            "dual": false,
+            "fit_intercept": true,
+            "intercept_scaling": 1,
+            "l1_ratio": 0.0,
+            "max_iter": 1000,
+            "n_jobs": null,
+            "penalty": "deprecated",
+            "random_state": null,
+            "solver": "lbfgs",
+            "tol": 0.0001,
+            "verbose": 0,
+            "warm_start": false
+        },
+        "parameter_note": "Explicit parameters verified from original notebook. Unspecified parameters reconstructed using current scikit-learn defaults."
+    },
+    "cross_validation": {
+        "method": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "grouping": "subject",
+        "parallel_workers": 1
+    },
+    "results": {
+        "mean_accuracy": 0.6104688056620746,
+        "std_accuracy": 0.13225573908550795,
+        "mean_macro_f1": 0.6108790413007463,
+        "std_macro_f1": 0.12362120778840612,
+        "fold_results": [
+            {
+                "model": "Logistic Regression",
+                "resolution": "128x96",
+                "fold": 1,
+                "accuracy": 0.41014150943396227,
+                "macro_f1": 0.4255202967951651,
+                "fit_time": 3.2987608909606934
+            },
+            {
+                "model": "Logistic Regression",
+                "resolution": "128x96",
+                "fold": 2,
+                "accuracy": 0.5806923451974646,
+                "macro_f1": 0.5792379707183495,
+                "fit_time": 3.929901123046875
+            },
+            {
+                "model": "Logistic Regression",
+                "resolution": "128x96",
+                "fold": 3,
+                "accuracy": 0.7606973058637084,
+                "macro_f1": 0.752735587418363,
+                "fit_time": 3.775545835494995
+            },
+            {
+                "model": "Logistic Regression",
+                "resolution": "128x96",
+                "fold": 4,
+                "accuracy": 0.6903440621531631,
+                "macro_f1": 0.6860223102711076,
+                "fit_time": 3.634526014328003
+            }
+        ]
+    },
+    "timing": {
+        "total_execution_seconds": 16.3,
+        "precision": "approximate",
+        "source": "VS Code notebook cell elapsed time",
+        "total_fit_time_seconds": 14.638733863830566,
+        "total_score_time_seconds": null
+    },
+    "environment": {
+        "python_version_at_reconstruction": "3.14.4",
+        "sklearn_version_at_reconstruction": "1.9.1"
+    },
+    "provenance": {
+        "results_source": "../results/classical/driver_based/logistic_regression_128x96.csv",
+        "configuration_source": "Original experiment notebook",
+        "runtime_source": "Original notebook screenshots",
+        "retraining_performed": false
+    }
+}
