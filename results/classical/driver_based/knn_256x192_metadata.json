@@ -1,0 +1,206 @@
+{
+    "experiment": {
+        "model": "KNN",
+        "resolution": "256x192",
+        "feature_type": "HOG",
+        "started_at": "2026-11-21T16:55:19.334024+00:00",
+        "completed_at": "2026-11-21T16:55:44.939462+00:00"
+    },
+    "dataset": {
+        "feature_file": "data/processed/driver_based/hog_256x192_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "training_images": 15732,
+        "hog_features": 25668,
+        "unique_drivers": 18,
+        "classes": [
+            "c0",
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5",
+            "c6",
+            "c7",
+            "c8",
+            "c9"
+        ]
+    },
+    "model_configuration": {
+        "pipeline": [
+            "StandardScaler",
+            "KNeighborsClassifier"
+        ],
+        "scaler_parameters": {
+            "copy": true,
+            "with_mean": true,
+            "with_std": true
+        },
+        "knn_parameters": {
+            "algorithm": "auto",
+            "leaf_size": 30,
+            "metric": "minkowski",
+            "metric_params": null,
+            "n_jobs": -1,
+            "n_neighbors": 5,
+            "p": 2,
+            "weights": "uniform"
+        }
+    },
+    "cross_validation": {
+        "method": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "grouping": "subject",
+        "parallel_workers": 1,
+        "fold_details": [
+            {
+                "fold": 1,
+                "training_images": 11492,
+                "validation_images": 4240,
+                "training_drivers": [
+                    "p002",
+                    "p021",
+                    "p022",
+                    "p024",
+                    "p035",
+                    "p039",
+                    "p041",
+                    "p049",
+                    "p050",
+                    "p052",
+                    "p056",
+                    "p061",
+                    "p081"
+                ],
+                "validation_drivers": [
+                    "p015",
+                    "p042",
+                    "p051",
+                    "p064",
+                    "p066"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.45966981132075474,
+                "macro_f1": 0.4335993401496272,
+                "fit_time_seconds": 1.1949028968811035,
+                "score_time_seconds": 5.632385730743408
+            },
+            {
+                "fold": 2,
+                "training_images": 11630,
+                "validation_images": 4102,
+                "training_drivers": [
+                    "p002",
+                    "p015",
+                    "p021",
+                    "p024",
+                    "p035",
+                    "p042",
+                    "p049",
+                    "p051",
+                    "p052",
+                    "p056",
+                    "p061",
+                    "p064",
+                    "p066"
+                ],
+                "validation_drivers": [
+                    "p022",
+                    "p039",
+                    "p041",
+                    "p050",
+                    "p081"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.5012189176011702,
+                "macro_f1": 0.48531441082122395,
+                "fit_time_seconds": 1.1653244495391846,
+                "score_time_seconds": 5.339069128036499
+            },
+            {
+                "fold": 3,
+                "training_images": 11946,
+                "validation_images": 3786,
+                "training_drivers": [
+                    "p002",
+                    "p015",
+                    "p021",
+                    "p022",
+                    "p035",
+                    "p039",
+                    "p041",
+                    "p042",
+                    "p050",
+                    "p051",
+                    "p056",
+                    "p064",
+                    "p066",
+                    "p081"
+                ],
+                "validation_drivers": [
+                    "p024",
+                    "p049",
+                    "p052",
+                    "p061"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.6032752245113576,
+                "macro_f1": 0.5798040268735003,
+                "fit_time_seconds": 1.1865746974945068,
+                "score_time_seconds": 4.9301347732543945
+            },
+            {
+                "fold": 4,
+                "training_images": 12128,
+                "validation_images": 3604,
+                "training_drivers": [
+                    "p015",
+                    "p022",
+                    "p024",
+                    "p039",
+                    "p041",
+                    "p042",
+                    "p049",
+                    "p050",
+                    "p051",
+                    "p052",
+                    "p061",
+                    "p064",
+                    "p066",
+                    "p081"
+                ],
+                "validation_drivers": [
+                    "p002",
+                    "p021",
+                    "p035",
+                    "p056"
+                ],
+                "driver_overlap": 0,
+                "accuracy": 0.5585460599334073,
+                "macro_f1": 0.5413478099310358,
+                "fit_time_seconds": 1.2206394672393799,
+                "score_time_seconds": 4.9075000286102295
+            }
+        ]
+    },
+    "results": {
+        "mean_accuracy": 0.5306775033416725,
+        "std_accuracy": 0.05467400242689872,
+        "mean_macro_f1": 0.5100163969438468,
+        "std_macro_f1": 0.05545657178925078
+    },
+    "timing": {
+        "total_execution_seconds": 25.60540597801446,
+        "total_fit_time_seconds": 4.767441511154175,
+        "total_score_time_seconds": 20.80908966064453
+    },
+    "warnings": [],
+    "environment": {
+        "python_version": "3.14.4",
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.4",
+        "operating_system": "Linux-7.0.0-43-generic-x86_64-with-glibc2.43",
+        "cpu_count": 32
+    }
+}

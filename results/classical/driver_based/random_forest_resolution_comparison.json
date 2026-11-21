@@ -1,0 +1,239 @@
+{
+  "report_type": "across_resolution_model_comparison",
+  "model": "Random Forest",
+  "n_estimators": 500,
+  "validation_strategy": "4-fold StratifiedGroupKFold grouped by subject",
+  "dataset": "Distracted Driver Detection",
+  "comparison": [
+    {
+      "resolution": "64x48",
+      "n_training_images": 15732,
+      "hog_features": 1260,
+      "model_configuration": {
+        "estimator": "RandomForestClassifier",
+        "explicit_kwargs": {
+          "n_estimators": 500,
+          "max_depth": null,
+          "random_state": 42,
+          "n_jobs": -1
+        },
+        "other_parameters": "scikit-learn defaults; full get_params() saved in local metadata JSON"
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.40471698,
+          "macro_f1": 0.4007372,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.49536811,
+          "macro_f1": 0.47444469,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.62651875,
+          "macro_f1": 0.60233494,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.59100999,
+          "macro_f1": 0.57636729,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.5294034575,
+        "std_accuracy_population": 0.0865041435927174,
+        "mean_macro_f1": 0.5134710299999999,
+        "std_macro_f1_population": 0.08075380124604072
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 17.1,
+        "time_precision": "approximate_notebook_cell_elapsed",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "source_files": {
+        "cv_csv": "results/classical/driver_based/random_forest_64x48.csv",
+        "metadata_json": "results/classical/driver_based/random_forest_64x48_metadata.json"
+      },
+      "provenance": [
+        "Nov 21 2026 screenshots: X_train.shape=(15732,1260), 500-tree RF run, saved 64x48 CSV read-back verified"
+      ]
+    },
+    {
+      "resolution": "128x96",
+      "n_training_images": 15732,
+      "hog_features": 5940,
+      "model_configuration": {
+        "estimator": "RandomForestClassifier",
+        "explicit_kwargs": {
+          "n_estimators": 500,
+          "max_depth": null,
+          "random_state": 42,
+          "n_jobs": -1
+        },
+        "other_parameters": "scikit-learn defaults"
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.34245283,
+          "macro_f1": 0.34124818,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.61774744,
+          "macro_f1": 0.59207357,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.62810354,
+          "macro_f1": 0.60380973,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.63346282,
+          "macro_f1": 0.61935264,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.5554416575000001,
+        "std_accuracy_population": 0.12309884457119946,
+        "mean_macro_f1": 0.53912103,
+        "std_macro_f1_population": 0.1146509653365991
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 37.7,
+        "time_precision": "approximate_notebook_cell_elapsed",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "source_files": {
+        "cv_csv": "results/classical/driver_based/random_forest_128x96.csv",
+        "metadata_json": "results/classical/driver_based/random_forest_128x96_metadata.json (save status not independently confirmed)"
+      },
+      "provenance": [
+        "Nov 21 2026 screenshot: 128x96 500-tree RF run, 37.7 s notebook execution time"
+      ]
+    },
+    {
+      "resolution": "256x192",
+      "n_training_images": 15732,
+      "hog_features": 25668,
+      "model_configuration": {
+        "estimator": "RandomForestClassifier",
+        "explicit_kwargs": {
+          "n_estimators": 500,
+          "max_depth": null,
+          "random_state": 42,
+          "n_jobs": -1
+        }
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.344575,
+          "macro_f1": 0.341709,
+          "fit_time_seconds": 20.040015,
+          "score_time_seconds": 0.104469
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.556802,
+          "macro_f1": 0.527583,
+          "fit_time_seconds": 19.489048,
+          "score_time_seconds": 0.114733
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.636027,
+          "macro_f1": 0.612748,
+          "fit_time_seconds": 20.86651,
+          "score_time_seconds": 0.102995
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.592952,
+          "macro_f1": 0.576308,
+          "fit_time_seconds": 21.033589,
+          "score_time_seconds": 0.103371
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.532589,
+        "std_accuracy_population": 0.1121145008217046,
+        "mean_macro_f1": 0.514587,
+        "std_macro_f1_population": 0.10428418224016527
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 81.88,
+        "time_precision": "measured_by_notebook_perf_counter"
+      },
+      "source_files": {
+        "cv_csv": "results/classical/driver_based/random_forest_256x192.csv",
+        "metadata_json": "results/classical/driver_based/random_forest_256x192_metadata.json"
+      },
+      "provenance": [
+        "Nov 21 2026 screenshot: 256x192 500-tree RF 4-fold output; CSV and JSON saved"
+      ]
+    }
+  ],
+  "best_resolution_by_mean_accuracy": "128x96",
+  "best_resolution_by_mean_macro_f1": "128x96",
+  "notes": [
+    "Accuracies and macro-F1 are fractions (multiply by 100 for percentages).",
+    "64x48 and 128x96 wall-clock times are approximate notebook cell durations, 256x192 is a perf_counter measurement.",
+    "256x192 fold scores were rounded in the provided screenshot.",
+    "This file captures experimental metrics, not fitted model weights.",
+    "For full local precision and metadata, aggregate the saved per-run JSON/CSV files in the project."
+  ]
+}

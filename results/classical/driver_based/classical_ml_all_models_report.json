@@ -1,0 +1,932 @@
+{
+  "schema_version": "1.0",
+  "title": "Distracted Driver Detection — Classical ML with HOG: consolidated driver-independent cross-validation report",
+  "generated_at_utc": "2026-11-21T16:31:21.403638+00:00",
+  "coverage": {
+    "resolutions": [
+      "64x48",
+      "128x96"
+    ],
+    "models": [
+      "Logistic Regression",
+      "Linear SVM",
+      "Random Forest",
+      "KNN"
+    ],
+    "count_primary_experiments": 8,
+    "256x192": "not_run_in_supplied_evidence"
+  },
+  "dataset_and_methodology": {
+    "project": "distracted-driver-detection",
+    "data_split": "driver_based",
+    "train_image_count": 15732,
+    "train_driver_count": 18,
+    "class_labels": [
+      "c0",
+      "c1",
+      "c2",
+      "c3",
+      "c4",
+      "c5",
+      "c6",
+      "c7",
+      "c8",
+      "c9"
+    ],
+    "cv_method": "StratifiedGroupKFold",
+    "cv_folds": 4,
+    "cv_shuffle": true,
+    "cv_seed": 42,
+    "cv_grouping": "subject",
+    "metrics": [
+      "accuracy",
+      "macro_f1"
+    ],
+    "summary_std_definition": "population standard deviation (numpy.std, ddof=0)",
+    "test_set_policy": "held out; no held-out test-set scores included",
+    "hog_feature_counts": {
+      "64x48": 1260,
+      "128x96": 5940
+    },
+    "image_alignment": "HOG feature rows assumed to match train.csv; not independently validated in screenshots"
+  },
+  "machine_and_software": {
+    "workstation_reported": {
+      "cpu": "AMD Ryzen 9 9950X",
+      "ram_gb": 96,
+      "gpu": "NVIDIA RTX 4090 (24 GB)"
+    },
+    "execution": "scikit-learn classical models on CPU; no GPU usage established",
+    "operating_system": "Ubuntu Linux",
+    "python_version_observed_in_screenshot": "3.14.4",
+    "sklearn_version": "unavailable from provided screenshots/notebook"
+  },
+  "primary_experiments": [
+    {
+      "experiment_id": "logistic_regression_64x48",
+      "model_name": "Logistic Regression",
+      "resolution": "64x48",
+      "hog_features": 1260,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "pipeline": [
+          {
+            "name": "scaler",
+            "type": "StandardScaler",
+            "kwargs": {}
+          },
+          {
+            "name": "logreg",
+            "type": "LogisticRegression",
+            "kwargs": {
+              "max_iter": 1000
+            }
+          }
+        ]
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.40660377,
+          "macro_f1": 0.4266527,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.4363725,
+          "macro_f1": 0.44388998,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.59825674,
+          "macro_f1": 0.58989271,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.51720311,
+          "macro_f1": 0.52773054,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.48960903,
+        "std_accuracy_population": 0.07464877670363894,
+        "mean_macro_f1": 0.4970414825,
+        "std_macro_f1_population": 0.06584609255364905
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": null,
+        "time_precision": null,
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported"
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/logistic_regression_64x48.csv"
+      },
+      "status": "completed",
+      "provenance": [
+        "uploaded 07_classical_driver_based.ipynb, cells 3-4"
+      ],
+      "notes": "Wall-time and fit-time not supplied in uploaded notebook."
+    },
+    {
+      "experiment_id": "linear_svm_64x48",
+      "model_name": "Linear SVM",
+      "resolution": "64x48",
+      "hog_features": 1260,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "pipeline": [
+          {
+            "name": "scaler",
+            "type": "StandardScaler",
+            "kwargs": {}
+          },
+          {
+            "name": "svm",
+            "type": "LinearSVC",
+            "kwargs": {
+              "C": 1.0,
+              "max_iter": 5000,
+              "random_state": 42
+            }
+          }
+        ]
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.39056604,
+          "macro_f1": 0.38964779,
+          "fit_time_seconds": 188.063229,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.38347148,
+          "macro_f1": 0.38435511,
+          "fit_time_seconds": 197.629248,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.52139461,
+          "macro_f1": 0.49864697,
+          "fit_time_seconds": 199.26391,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.45754717,
+          "macro_f1": 0.46050837,
+          "fit_time_seconds": 210.143842,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.438244825,
+        "std_accuracy_population": 0.05603537527671806,
+        "mean_macro_f1": 0.43328955999999996,
+        "std_macro_f1_population": 0.04824841744881277
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 780,
+        "time_precision": "approximate_user_recalled_duration_13_minutes",
+        "sum_known_fit_time_seconds": 795.100229,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported",
+        "explanation": "No convergence messages shown in uploaded notebook outputs; do not assume guaranteed convergence."
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/linear_svm_64x48.csv"
+      },
+      "status": "completed",
+      "provenance": [
+        "uploaded 07_classical_driver_based.ipynb, cells 6-7",
+        "user stated 64x48 SVM took ~13 minutes"
+      ],
+      "notes": null
+    },
+    {
+      "experiment_id": "random_forest_64x48",
+      "model_name": "Random Forest",
+      "resolution": "64x48",
+      "hog_features": 1260,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "estimator": "RandomForestClassifier",
+        "explicit_kwargs": {
+          "n_estimators": 500,
+          "max_depth": null,
+          "random_state": 42,
+          "n_jobs": -1
+        },
+        "other_parameters": "scikit-learn defaults; full get_params() saved in local metadata JSON"
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.40471698,
+          "macro_f1": 0.4007372,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.49536811,
+          "macro_f1": 0.47444469,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.62651875,
+          "macro_f1": 0.60233494,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.59100999,
+          "macro_f1": 0.57636729,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.5294034575,
+        "std_accuracy_population": 0.0865041435927174,
+        "mean_macro_f1": 0.5134710299999999,
+        "std_macro_f1_population": 0.08075380124604072
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 17.1,
+        "time_precision": "approximate_notebook_cell_elapsed",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported"
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/random_forest_64x48.csv",
+        "metadata_json": "results/classical/driver_based/random_forest_64x48_metadata.json"
+      },
+      "status": "completed",
+      "provenance": [
+        "Nov 21 2026 screenshots: X_train.shape=(15732,1260), 500-tree RF run, saved 64x48 CSV read-back verified"
+      ],
+      "notes": "RF 64x48 500-tree run verified; exact per-fold fit/score timings available in the user’s CSV, but not available in this chat. Wall time ~17.1 s from VS Code execution indicator."
+    },
+    {
+      "experiment_id": "knn_64x48",
+      "model_name": "KNN",
+      "resolution": "64x48",
+      "hog_features": 1260,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_64x48_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "pipeline": [
+          {
+            "name": "scaler",
+            "type": "StandardScaler",
+            "kwargs": {}
+          },
+          {
+            "name": "knn",
+            "type": "KNeighborsClassifier",
+            "kwargs": {
+              "n_neighbors": 5,
+              "weights": "uniform",
+              "n_jobs": -1
+            }
+          }
+        ]
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.34716981,
+          "macro_f1": 0.33596405,
+          "fit_time_seconds": 0.070482,
+          "score_time_seconds": 0.285926,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.39980497,
+          "macro_f1": 0.38707672,
+          "fit_time_seconds": 0.065658,
+          "score_time_seconds": 0.234601,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.54120444,
+          "macro_f1": 0.53285261,
+          "fit_time_seconds": 0.06658,
+          "score_time_seconds": 0.213542,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.49556049,
+          "macro_f1": 0.48806661,
+          "fit_time_seconds": 0.065749,
+          "score_time_seconds": 0.219081,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.44593492749999997,
+        "std_accuracy_population": 0.07652041864621768,
+        "mean_macro_f1": 0.43598999749999995,
+        "std_macro_f1_population": 0.07824966159489934
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": null,
+        "time_precision": null,
+        "sum_known_fit_time_seconds": 0.268469,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported"
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/knn_64x48.csv"
+      },
+      "status": "completed",
+      "provenance": [
+        "uploaded 07_classical_driver_based.ipynb, cells 13-14"
+      ],
+      "notes": null
+    },
+    {
+      "experiment_id": "logistic_regression_128x96",
+      "model_name": "Logistic Regression",
+      "resolution": "128x96",
+      "hog_features": 5940,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "pipeline": [
+          {
+            "name": "scaler",
+            "type": "StandardScaler",
+            "kwargs": {}
+          },
+          {
+            "name": "logreg",
+            "type": "LogisticRegression",
+            "kwargs": {
+              "max_iter": 1000
+            }
+          }
+        ]
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.41014151,
+          "macro_f1": 0.4255203,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.58069235,
+          "macro_f1": 0.57923797,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.76069731,
+          "macro_f1": 0.75273559,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.69034406,
+          "macro_f1": 0.68602231,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.6104688075,
+        "std_accuracy_population": 0.13225573945034869,
+        "mean_macro_f1": 0.6108790424999999,
+        "std_macro_f1_population": 0.12362120733244748
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 15.3,
+        "time_precision": "approximate_notebook_cell_elapsed",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported"
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/logistic_regression_128x96.csv"
+      },
+      "status": "completed",
+      "provenance": [
+        "Nov 20 2026 LR screenshot at 128x96: fold metrics and 15.3 s wall time"
+      ],
+      "notes": null
+    },
+    {
+      "experiment_id": "linear_svm_128x96",
+      "model_name": "Linear SVM",
+      "resolution": "128x96",
+      "hog_features": 5940,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "pipeline": [
+          {
+            "name": "scaler",
+            "type": "StandardScaler",
+            "kwargs": {}
+          },
+          {
+            "name": "svm",
+            "type": "LinearSVC",
+            "kwargs": {
+              "C": 1.0,
+              "max_iter": 5000,
+              "random_state": 42
+            }
+          }
+        ]
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 4
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.37971698,
+          "macro_f1": 0.37915257,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": 128.9
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.46343247,
+          "macro_f1": 0.45890352,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": 147.8
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.64315901,
+          "macro_f1": 0.62867891,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": 157.6
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.57852386,
+          "macro_f1": 0.55977324,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": 161.9
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.51620808,
+        "std_accuracy_population": 0.10175323146583036,
+        "mean_macro_f1": 0.50662706,
+        "std_macro_f1_population": 0.09519513171363672
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 9714.0,
+        "time_precision": "approximate_verbose_parallel_elapsed_161.9_minutes",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "convergence_warning",
+        "message": "Liblinear failed to converge (at least some folds and final refit); accuracy preliminary, not a converged SVM benchmark."
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/linear_svm_128x96.csv",
+        "fitted_model": "models/classical/driver_based/linear_svm_128x96.joblib",
+        "final_refit_wall_seconds_approx": 4260
+      },
+      "status": "completed",
+      "provenance": [
+        "Nov 21 2026 screenshot: four-fold scores, CV fold end messages, convergence warning",
+        "Nov 21 2026 screenshot: final full-training model saved"
+      ],
+      "notes": "After parallel cross-validation, one separate full-training refit took roughly 71 minutes; not included in CV wall time."
+    },
+    {
+      "experiment_id": "random_forest_128x96",
+      "model_name": "Random Forest",
+      "resolution": "128x96",
+      "hog_features": 5940,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "estimator": "RandomForestClassifier",
+        "explicit_kwargs": {
+          "n_estimators": 500,
+          "max_depth": null,
+          "random_state": 42,
+          "n_jobs": -1
+        },
+        "other_parameters": "scikit-learn defaults"
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.34245283,
+          "macro_f1": 0.34124818,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.61774744,
+          "macro_f1": 0.59207357,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.62810354,
+          "macro_f1": 0.60380973,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.63346282,
+          "macro_f1": 0.61935264,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.5554416575000001,
+        "std_accuracy_population": 0.12309884457119946,
+        "mean_macro_f1": 0.53912103,
+        "std_macro_f1_population": 0.1146509653365991
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 37.7,
+        "time_precision": "approximate_notebook_cell_elapsed",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported"
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/random_forest_128x96.csv",
+        "metadata_json": "results/classical/driver_based/random_forest_128x96_metadata.json (save status not independently confirmed)"
+      },
+      "status": "completed",
+      "provenance": [
+        "Nov 21 2026 screenshot: 128x96 500-tree RF run, 37.7 s notebook execution time"
+      ],
+      "notes": "Approximate fold elapsed seconds [9.4,9.1,9.4,9.8] reported in output; exact fit_time and score_time available from user session where rf_scores was computed, not in this copy."
+    },
+    {
+      "experiment_id": "knn_128x96",
+      "model_name": "KNN",
+      "resolution": "128x96",
+      "hog_features": 5940,
+      "dataset": {
+        "num_training_images": 15732,
+        "num_classes": 10,
+        "num_drivers": 18,
+        "feature_file": "data/processed/driver_based/hog_128x96_train.npy",
+        "metadata_file": "data/splits/driver_based/train.csv",
+        "feature_row_alignment_assumed": true
+      },
+      "model_configuration": {
+        "pipeline": [
+          {
+            "name": "scaler",
+            "type": "StandardScaler",
+            "kwargs": {}
+          },
+          {
+            "name": "knn",
+            "type": "KNeighborsClassifier",
+            "kwargs": {
+              "n_neighbors": 5,
+              "weights": "uniform",
+              "n_jobs": -1
+            }
+          }
+        ]
+      },
+      "cross_validation": {
+        "strategy": "StratifiedGroupKFold",
+        "n_splits": 4,
+        "shuffle": true,
+        "random_state": 42,
+        "groups": "subject",
+        "cv_parallel_jobs": 1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.4740566,
+          "macro_f1": 0.45366837,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.50633837,
+          "macro_f1": 0.48134506,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.58267301,
+          "macro_f1": 0.5666081,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.57241953,
+          "macro_f1": 0.56655105,
+          "fit_time_seconds": null,
+          "score_time_seconds": null,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.5338718775,
+        "std_accuracy_population": 0.045286403876323295,
+        "mean_macro_f1": 0.5170431449999999,
+        "std_macro_f1_population": 0.05049364514621838
+      },
+      "timing": {
+        "cross_validation_wall_time_seconds": 6.31,
+        "time_precision": "measured_by_time.perf_counter_in_notebook",
+        "sum_known_fit_time_seconds": null,
+        "notes": "CV wall-clock time and sum of fit times are different quantities, especially with parallel folds."
+      },
+      "convergence": {
+        "status": "not_reported"
+      },
+      "artifacts": {
+        "cv_csv": "results/classical/driver_based/knn_128x96.csv (save not confirmed)",
+        "metadata_json": "results/classical/driver_based/knn_128x96_metadata.json (save not confirmed)"
+      },
+      "status": "completed",
+      "provenance": [
+        "Nov 21 2026 screenshot: KNN 128x96 4-fold output, measured wall time 6.31 s"
+      ],
+      "notes": "The screenshot does not show a post-run verification of X_train.shape or an executed KNN results-saving cell; resolution inferred from preceding workflow."
+    }
+  ],
+  "historical_trials": [
+    {
+      "run": "historical_baseline_64x48_random_forest_100_trees",
+      "status": "superseded_by_verified_500_tree_run",
+      "resolution": "64x48",
+      "model": "Random Forest",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "max_depth": null,
+        "random_state": 42,
+        "n_jobs": -1
+      },
+      "fold_results": [
+        {
+          "fold": 1,
+          "accuracy": 0.38985849,
+          "macro_f1": 0.38075898,
+          "fit_time_seconds": 0.98310685,
+          "score_time_seconds": 0.02952719,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.42881521,
+          "macro_f1": 0.41202571,
+          "fit_time_seconds": 0.95037127,
+          "score_time_seconds": 0.02956223,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.59852087,
+          "macro_f1": 0.58290448,
+          "fit_time_seconds": 0.98350501,
+          "score_time_seconds": 0.01895189,
+          "verbose_elapsed_minutes_approx": null
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.5463374,
+          "macro_f1": 0.53615265,
+          "fit_time_seconds": 1.01869798,
+          "score_time_seconds": 0.02872872,
+          "verbose_elapsed_minutes_approx": null
+        }
+      ],
+      "summary": {
+        "mean_accuracy": 0.4908829925,
+        "mean_macro_f1": 0.47796045499999995
+      },
+      "source": "uploaded 07_classical_driver_based.ipynb, cells 9-11"
+    }
+  ],
+  "comparisons": {
+    "64x48": {
+      "Logistic Regression": {
+        "mean_accuracy": 0.48960903,
+        "mean_macro_f1": 0.4970414825
+      },
+      "Linear SVM": {
+        "mean_accuracy": 0.438244825,
+        "mean_macro_f1": 0.43328955999999996
+      },
+      "Random Forest": {
+        "mean_accuracy": 0.5294034575,
+        "mean_macro_f1": 0.5134710299999999
+      },
+      "KNN": {
+        "mean_accuracy": 0.44593492749999997,
+        "mean_macro_f1": 0.43598999749999995
+      }
+    },
+    "128x96": {
+      "Logistic Regression": {
+        "mean_accuracy": 0.6104688075,
+        "mean_macro_f1": 0.6108790424999999
+      },
+      "Linear SVM": {
+        "mean_accuracy": 0.51620808,
+        "mean_macro_f1": 0.50662706
+      },
+      "Random Forest": {
+        "mean_accuracy": 0.5554416575000001,
+        "mean_macro_f1": 0.53912103
+      },
+      "KNN": {
+        "mean_accuracy": 0.5338718775,
+        "mean_macro_f1": 0.5170431449999999
+      }
+    },
+    "rf_500_128_minus_64_accuracy_percentage_points": 2.6038200000000122
+  },
+  "important_caveats": [
+    "This JSON is a results and reproducibility report. It does not serialize fitted weights/models; trained estimators require separate .joblib/.pkl or model-specific weights.",
+    "The uploaded notebook is an older version containing only the initial 64x48 experiments; later experimental data are transcribed from screenshots, so some exact timing and software-version fields are unavailable.",
+    "Use saved CSV and per-model metadata JSON files from the user’s workstation to fill missing per-fold fit/score timings and to verify the latest model settings.",
+    "128x96 Linear SVM issued non-convergence warnings; its accuracy should be treated as preliminary.",
+    "One attempted 64x48 Random Forest 500-tree rerun actually used 128x96 HOG features. That mislabeled duplicate is excluded from primary comparisons; subsequent 64x48 result was shape-checked and CSV-verified.",
+    "Wall-clock runtimes noted as approximate come from notebook-cell elapsed indicators and may include display or scheduling overhead.",
+    "For true apples-to-apples speed comparisons, ensure identical parallelism and hardware load and measure durations with time.perf_counter()."
+  ]
+}
