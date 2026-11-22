@@ -1,0 +1,23 @@
+{
+    "model": "ResNet18",
+    "pretrained": true,
+    "pretrained_dataset": "ImageNet",
+    "fine_tuning": "all_layers",
+    "resolution": [
+        256,
+        192
+    ],
+    "training_images": 15732,
+    "validation_images": 3603,
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "backbone_lr": 0.0001,
+    "classifier_lr": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 15,
+    "min_epochs": 7,
+    "patience": 5,
+    "checkpoint_selection": "validation_macro_f1",
+    "seed": 42,
+    "device": "cuda"
+}

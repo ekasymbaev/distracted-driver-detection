@@ -1,0 +1,12 @@
+{
+    "model": "ResNet18",
+    "fine_tuning": "all_layers",
+    "epochs_completed": 12,
+    "best_epoch": 5,
+    "best_val_accuracy": 0.8892589508742714,
+    "best_val_macro_f1": 0.8818722563886137,
+    "best_val_loss": 0.44394251062543105,
+    "total_training_seconds": 686.5677647539997,
+    "best_checkpoint": "../models/deep_learning/driver_based/resnet18/full_finetuning/best_model.pt",
+    "training_history": "../results/deep_learning/driver_based/resnet18/full_finetuning/training_history.csv"
+}

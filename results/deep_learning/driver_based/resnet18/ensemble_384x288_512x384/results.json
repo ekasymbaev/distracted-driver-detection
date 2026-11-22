@@ -1,0 +1,12 @@
+{
+    "model": "ResNet18 Multi-Resolution Ensemble",
+    "method": "50/50 probability averaging",
+    "validation_images": 3603,
+    "accuracy": 0.9567027477102414,
+    "macro_f1": 0.9540472335432465,
+    "inference_time_seconds": 21.215293681947514,
+    "checkpoints": {
+        "384x288": "../models/deep_learning/driver_based/resnet18/resolution_384x288/best_model.pt",
+        "512x384": "../models/deep_learning/driver_based/resnet18/resolution_512x384/best_model.pt"
+    }
+}

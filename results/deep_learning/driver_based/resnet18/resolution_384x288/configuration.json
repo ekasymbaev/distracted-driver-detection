@@ -1,0 +1,29 @@
+{
+    "model": "ResNet18",
+    "pretrained": "ImageNet",
+    "fine_tuning": "all_layers",
+    "image_width": 384,
+    "image_height": 288,
+    "training_images": 15732,
+    "validation_images": 3603,
+    "batch_size": 32,
+    "backbone_lr": 0.0001,
+    "classifier_lr": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "max_epochs": 15,
+    "min_epochs": 7,
+    "patience": 5,
+    "augmentation": {
+        "rotation": 5,
+        "translation": 0.04,
+        "scale": [
+            0.97,
+            1.03
+        ],
+        "brightness": 0.15,
+        "contrast": 0.15
+    },
+    "checkpoint_selection": "validation_macro_f1",
+    "seed": 42
+}

@@ -1,0 +1,17 @@
+{
+    "model": "External_Pretrained_YOLOv8",
+    "source": "Safe-Drive-TN/State-farm-detection",
+    "weights": "/home/js/.cache/huggingface/hub/models--Safe-Drive-TN--State-farm-detection/snapshots/f0562ce97486b665691d8c01e3f5682adea9c5f7/weights/best.pt",
+    "validation_images": 3603,
+    "validation_drivers": [
+        "p014",
+        "p016",
+        "p047",
+        "p075"
+    ],
+    "inference_resolution": 224,
+    "accuracy": 0.9972245351096308,
+    "macro_f1": 0.9971449471549511,
+    "inference_time_seconds": 6.849909535027109,
+    "training_overlap_verified": false
+}

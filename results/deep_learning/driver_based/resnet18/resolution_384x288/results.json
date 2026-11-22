@@ -1,0 +1,12 @@
+{
+    "model": "ResNet18",
+    "resolution": "384x288",
+    "epochs_completed": 13,
+    "best_epoch": 8,
+    "best_val_accuracy": 0.9314460172078823,
+    "best_val_macro_f1": 0.9287923534351629,
+    "best_val_loss": 0.23230383274497202,
+    "total_training_seconds": 1143.4533687289804,
+    "peak_gpu_memory_mb": 1693.96142578125,
+    "best_checkpoint": "../models/deep_learning/driver_based/resnet18/resolution_384x288/best_model.pt"
+}

@@ -1,0 +1,15 @@
+{
+    "model": "ResNet18",
+    "resolution": "512x384",
+    "training_images": 15732,
+    "validation_images": 3603,
+    "epochs_completed": 12,
+    "best_epoch": 6,
+    "best_val_accuracy": 0.922842076047738,
+    "best_val_macro_f1": 0.9140193124232571,
+    "best_val_loss": 0.39108544163705966,
+    "total_training_seconds": 1703.230245295039,
+    "peak_gpu_memory_mb": 2863.21142578125,
+    "best_checkpoint": "../models/deep_learning/driver_based/resnet18/resolution_512x384/best_model.pt",
+    "training_history": "../results/deep_learning/driver_based/resnet18/resolution_512x384/training_history.csv"
+}

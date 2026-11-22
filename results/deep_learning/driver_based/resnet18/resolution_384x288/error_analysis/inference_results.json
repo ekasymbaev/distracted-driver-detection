@@ -1,0 +1,9 @@
+{
+    "model": "ResNet18",
+    "resolution": "384x288",
+    "checkpoint": "../models/deep_learning/driver_based/resnet18/resolution_384x288/best_model.pt",
+    "validation_images": 3603,
+    "accuracy": 0.9314460172078823,
+    "macro_f1": 0.9287923534351629,
+    "inference_time_seconds": 9.020689504977781
+}
