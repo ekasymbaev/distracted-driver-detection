@@ -1,0 +1,17 @@
+{
+    "model": "CNN_From_Scratch_Baseline",
+    "fold": 1,
+    "best_epoch": 12,
+    "evaluation_images": 4240,
+    "evaluation_drivers": [
+        "p015",
+        "p042",
+        "p051",
+        "p064",
+        "p066"
+    ],
+    "accuracy": 0.3733490566037736,
+    "macro_f1": 0.3491675890340399,
+    "loss": 1.7959305230326037,
+    "evaluation_time_seconds": 7.277120323036797
+}

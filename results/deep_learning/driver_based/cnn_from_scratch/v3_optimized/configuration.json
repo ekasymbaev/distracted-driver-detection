@@ -1,0 +1,61 @@
+{
+    "model": "DriverCNNV3",
+    "pretrained": false,
+    "parameters": 357258,
+    "resolution": [
+        256,
+        192
+    ],
+    "training_images": 15732,
+    "validation_images": 3603,
+    "training_drivers": [
+        "p002",
+        "p015",
+        "p021",
+        "p022",
+        "p024",
+        "p035",
+        "p039",
+        "p041",
+        "p042",
+        "p049",
+        "p050",
+        "p051",
+        "p052",
+        "p056",
+        "p061",
+        "p064",
+        "p066",
+        "p081"
+    ],
+    "validation_drivers": [
+        "p014",
+        "p016",
+        "p047",
+        "p075"
+    ],
+    "augmentation": {
+        "rotation_degrees": 5,
+        "translation_fraction": 0.04,
+        "scale": [
+            0.97,
+            1.03
+        ],
+        "brightness": 0.15,
+        "contrast": 0.15,
+        "horizontal_flip": false
+    },
+    "batch_normalization": true,
+    "dropout": 0.3,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 20,
+    "min_epochs": 10,
+    "patience": 5,
+    "checkpoint_selection": "validation_macro_f1",
+    "random_seed": 42,
+    "device": "cuda",
+    "torch_version": "2.14.1+cu132"
+}

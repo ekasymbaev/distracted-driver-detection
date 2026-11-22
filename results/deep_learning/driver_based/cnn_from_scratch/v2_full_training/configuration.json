@@ -1,0 +1,20 @@
+{
+    "model": "DriverCNNV2",
+    "pretrained": false,
+    "parameters": 356810,
+    "resolution": [
+        256,
+        192
+    ],
+    "training_images": 15732,
+    "validation_images": 3603,
+    "batch_size": 32,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "max_epochs": 20,
+    "patience": 5,
+    "min_epochs": 10,
+    "seed": 42,
+    "device": "cuda"
+}

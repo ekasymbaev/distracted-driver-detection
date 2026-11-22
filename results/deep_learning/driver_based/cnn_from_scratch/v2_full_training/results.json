@@ -1,0 +1,13 @@
+{
+    "model": "DriverCNNV2",
+    "epochs_completed": 10,
+    "best_epoch": 1,
+    "best_val_loss": 1.7746127461050405,
+    "best_val_accuracy": 0.39827921176797115,
+    "best_val_macro_f1": 0.3749745153535321,
+    "epoch10_train_accuracy": 0.9537884566488686,
+    "epoch10_val_accuracy": 0.5001387732445185,
+    "epoch10_val_macro_f1": 0.4734741367024752,
+    "total_time_seconds": 366.71686665702146,
+    "checkpoint": "../models/deep_learning/driver_based/cnn_from_scratch/v2_full_training/best_model.pt"
+}

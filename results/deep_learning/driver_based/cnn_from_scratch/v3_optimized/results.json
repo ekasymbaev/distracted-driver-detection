@@ -1,0 +1,17 @@
+{
+    "experiment": "CNN_V3_Optimized",
+    "model": "DriverCNNV3",
+    "epochs_completed": 16,
+    "best_epoch": 11,
+    "best_val_accuracy": 0.6328059950041632,
+    "best_val_macro_f1": 0.6477595233312285,
+    "best_val_loss": 2.9800162912886243,
+    "epoch10_train_accuracy": 0.92372234935164,
+    "epoch10_val_accuracy": 0.6200388565084651,
+    "epoch10_val_macro_f1": 0.6064401503845136,
+    "total_training_seconds": 880.989802067983,
+    "peak_gpu_memory_mb": 1049.70751953125,
+    "best_model_checkpoint": "../models/deep_learning/driver_based/cnn_from_scratch/v3_optimized/best_model.pt",
+    "epoch10_checkpoint": "../models/deep_learning/driver_based/cnn_from_scratch/v3_optimized/epoch_10.pt",
+    "training_history": "../results/deep_learning/driver_based/cnn_from_scratch/v3_optimized/training_history.csv"
+}

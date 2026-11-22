@@ -1,0 +1,21 @@
+{
+    "model": "CNN_From_Scratch_Baseline",
+    "experiment": "Full_Training",
+    "training_images": 15732,
+    "training_drivers": 18,
+    "validation_images": 3603,
+    "validation_drivers": 4,
+    "resolution": "256x192",
+    "epochs": 10,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "optimizer": "Adam",
+    "seed": 42,
+    "parameters": 94538,
+    "training_time_seconds": 320.34542236302514,
+    "validation_time_seconds": 6.713848337996751,
+    "validation_accuracy": 0.4326949764085484,
+    "validation_macro_f1": 0.39327131980020924,
+    "validation_loss": 1.7638406176569807,
+    "model_path": "../models/deep_learning/driver_based/cnn_from_scratch/baseline/full_training/cnn_full_training.pt"
+}

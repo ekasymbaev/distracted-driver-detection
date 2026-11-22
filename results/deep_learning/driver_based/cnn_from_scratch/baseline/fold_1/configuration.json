@@ -1,0 +1,57 @@
+{
+    "experiment": "CNN_Scratch_Baseline",
+    "fold": 1,
+    "architecture": {
+        "model": "DriverCNN",
+        "pretrained": false,
+        "parameters": 94538
+    },
+    "hyperparameters": {
+        "image_width": 256,
+        "image_height": 192,
+        "batch_size": 32,
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0,
+        "loss_function": "CrossEntropyLoss",
+        "max_epochs": 20,
+        "early_stopping_patience": 5,
+        "early_stopping_metric": "loss",
+        "augmentation": false,
+        "random_seed": 42
+    },
+    "dataset": {
+        "training_images": 8825,
+        "early_stopping_images": 2667,
+        "outer_cv_images": 4240,
+        "training_drivers": [
+            "p002",
+            "p021",
+            "p022",
+            "p035",
+            "p041",
+            "p049",
+            "p052",
+            "p056",
+            "p061",
+            "p081"
+        ],
+        "early_stopping_drivers": [
+            "p024",
+            "p039",
+            "p050"
+        ],
+        "outer_cv_drivers": [
+            "p015",
+            "p042",
+            "p051",
+            "p064",
+            "p066"
+        ]
+    },
+    "environment": {
+        "pytorch_version": "2.14.1+cu132",
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4090"
+    }
+}

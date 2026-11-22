@@ -1,0 +1,14 @@
+{
+    "experiment": "CNN_Scratch_Baseline",
+    "fold": 1,
+    "epochs_completed": 17,
+    "best_epoch": 12,
+    "best_stop_loss": 1.9266728423354238,
+    "best_stop_accuracy": 0.32470941132358455,
+    "best_stop_macro_f1": 0.3421972622093652,
+    "total_training_seconds": 388.18565153400414,
+    "peak_gpu_memory_mb": 709.7216796875,
+    "early_stopped": true,
+    "checkpoint": "../models/deep_learning/driver_based/cnn_from_scratch/baseline/fold_1/best_model.pt",
+    "history_csv": "../results/deep_learning/driver_based/cnn_from_scratch/baseline/fold_1/training_history.csv"
+}

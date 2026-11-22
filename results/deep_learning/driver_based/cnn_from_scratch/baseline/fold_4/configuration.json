@@ -1,0 +1,43 @@
+{
+    "fold": 4,
+    "model": "DriverCNN",
+    "parameters": 94538,
+    "image_size": [
+        256,
+        192
+    ],
+    "batch_size": 32,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "max_epochs": 20,
+    "patience": 5,
+    "random_seed": 42,
+    "training_images": 9118,
+    "stopping_images": 3010,
+    "outer_cv_images": 3604,
+    "training_drivers": [
+        "p022",
+        "p024",
+        "p039",
+        "p042",
+        "p049",
+        "p051",
+        "p061",
+        "p064",
+        "p066",
+        "p081"
+    ],
+    "stopping_drivers": [
+        "p015",
+        "p041",
+        "p050",
+        "p052"
+    ],
+    "outer_cv_drivers": [
+        "p002",
+        "p021",
+        "p035",
+        "p056"
+    ]
+}

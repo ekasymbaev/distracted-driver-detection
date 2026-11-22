@@ -1,0 +1,10 @@
+{
+    "fold": 4,
+    "epochs_completed": 10,
+    "best_epoch": 5,
+    "best_stop_loss": 2.0363654006755234,
+    "best_stop_accuracy": 0.22292358803986712,
+    "best_stop_macro_f1": 0.14486802691290127,
+    "total_training_seconds": 245.269930740993,
+    "checkpoint": "../models/deep_learning/driver_based/cnn_from_scratch/baseline/fold_4/best_model.pt"
+}
