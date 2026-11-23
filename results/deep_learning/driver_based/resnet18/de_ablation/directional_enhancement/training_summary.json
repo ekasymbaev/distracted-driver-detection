@@ -1,0 +1,20 @@
+{
+    "model": "directional_enhancement",
+    "seed": 42,
+    "resolution": [
+        384,
+        288
+    ],
+    "train_images": 15732,
+    "val_images": 3603,
+    "best_epoch": 8,
+    "best_val_macro_f1": 0.9329035302462986,
+    "epochs_completed": 13,
+    "training_seconds": 909.249549019034,
+    "backbone_lr": 0.0001,
+    "new_layer_lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 15,
+    "patience": 5
+}
